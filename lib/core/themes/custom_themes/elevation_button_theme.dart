@@ -72,7 +72,7 @@ class MyElevationButtonTheme {
 
         shape: const WidgetStatePropertyAll(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius: BorderRadius.all(Radius.circular(6)),
           ),
         ),
 
@@ -129,7 +129,7 @@ class MyElevationButtonTheme {
         // --------------------------------------------------------
         // SIZE
         // --------------------------------------------------------
-        // minimumSize: const WidgetStatePropertyAll(Size(0, 36)),
+        minimumSize: const WidgetStatePropertyAll(Size(0, 36)),
         padding: const WidgetStatePropertyAll(
           EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         ),

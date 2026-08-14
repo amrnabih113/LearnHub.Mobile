@@ -84,7 +84,7 @@ class MyTextFieldTheme {
       enabledBorder: _border(color: MyColors.borderLight, radius: borderRadius),
 
       focusedBorder: _border(
-        color: MyColors.primaryButtonLight,
+        color: MyColors.blue,
         width: 2,
         radius: borderRadius,
       ),
@@ -166,7 +166,7 @@ class MyTextFieldTheme {
       enabledBorder: _border(color: MyColors.borderDark, radius: borderRadius),
 
       focusedBorder: _border(
-        color: MyColors.primaryButtonDark,
+        color: MyColors.blueDark,
         width: 2,
         radius: borderRadius,
       ),

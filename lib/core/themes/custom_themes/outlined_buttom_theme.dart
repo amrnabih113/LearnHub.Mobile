@@ -20,7 +20,7 @@ class MyOutlinedButtonTheme {
       ),
 
       padding: WidgetStatePropertyAll(
-        EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+        EdgeInsets.symmetric(vertical: 18.0, horizontal: 18.0),
       ),
 
       textStyle: WidgetStatePropertyAll(
@@ -29,7 +29,7 @@ class MyOutlinedButtonTheme {
 
       shape: WidgetStatePropertyAll(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: BorderRadius.all(Radius.circular(18)),
         ),
       ),
     ),
@@ -59,7 +59,7 @@ class MyOutlinedButtonTheme {
 
       shape: WidgetStatePropertyAll(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(60)),
+          borderRadius: BorderRadius.all(Radius.circular(14.0)),
         ),
       ),
     ),

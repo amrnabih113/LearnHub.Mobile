@@ -28,21 +28,35 @@ class MyTheme {
       // ----------------------------------------------------------
       // COLORS
       // ----------------------------------------------------------
+
+      //  --primary
       primaryColor: MyColors.blue,
 
       scaffoldBackgroundColor: MyColors.backgroundLight,
 
       colorScheme: const ColorScheme.light(
+        //  --primary
         primary: MyColors.blue,
-        onPrimary: MyColors.white,
 
-        secondary: MyColors.yellow,
-        onSecondary: MyColors.foregroundLight,
+        //  --primary-foreground
+        onPrimary: MyColors.foregroundDark,
 
+        //  --secondary
+        secondary: MyColors.secondaryLight,
+
+        //  --secondary-foreground
+        onSecondary: MyColors.blue,
+
+        //  --card
         surface: MyColors.surfaceLight,
+
+        //  --card-foreground
         onSurface: MyColors.foregroundLight,
 
+        //  --destructive
         error: MyColors.error,
+
+        //  --destructive-foreground
         onError: MyColors.white,
       ),
 
@@ -92,6 +106,7 @@ class MyTheme {
         circularTrackColor: MyColors.surfaceAltLight,
         borderRadius: BorderRadius.all(Radius.circular(4)),
       ),
+
       // ----------------------------------------------------------
       // DIVIDERS
       // ----------------------------------------------------------
@@ -120,21 +135,35 @@ class MyTheme {
       // ----------------------------------------------------------
       // COLORS
       // ----------------------------------------------------------
+
+      //  --primary
       primaryColor: MyColors.blueDark,
 
       scaffoldBackgroundColor: MyColors.backgroundDark,
 
       colorScheme: const ColorScheme.dark(
+        //  --primary
         primary: MyColors.blueDark,
-        onPrimary: MyColors.white,
 
-        secondary: MyColors.yellow,
-        onSecondary: MyColors.foregroundDark,
+        //  --primary-foreground
+        onPrimary: MyColors.foregroundDark,
 
+        //  --secondary
+        secondary: MyColors.secondaryDark,
+
+        //  --secondary-foreground
+        onSecondary: MyColors.textSecondaryDark,
+
+        //  --card
         surface: MyColors.surfaceDark,
+
+        //  --card-foreground
         onSurface: MyColors.foregroundDark,
 
+        //  --destructive
         error: MyColors.errorDark,
+
+        //  --destructive-foreground
         onError: MyColors.white,
       ),
 
@@ -178,8 +207,11 @@ class MyTheme {
       // PROGRESS INDICATORS
       // ----------------------------------------------------------
       progressIndicatorTheme: const ProgressIndicatorThemeData(
-        color: MyColors.blueDark,
+        color: MyColors.yellow,
         circularTrackColor: MyColors.secondaryDark,
+        linearTrackColor: MyColors.secondaryDark,
+        linearMinHeight: 8,
+        borderRadius: BorderRadius.all(Radius.circular(4)),
       ),
 
       // ----------------------------------------------------------

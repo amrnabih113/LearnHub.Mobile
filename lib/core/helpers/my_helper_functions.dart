@@ -20,26 +20,17 @@ class MyHelperFunctions {
 
     final snackBar = SnackBar(
       behavior: SnackBarBehavior.floating,
-      margin: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 10,
-      ),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(14),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
       duration: duration,
 
-      backgroundColor: isDark
-          ? MyColors.surfaceDark
-          : MyColors.surfaceLight,
+      backgroundColor: isDark ? MyColors.surfaceDark : MyColors.surfaceLight,
 
       content: Text(
         message,
         style: TextStyle(
-          color: isDark
-              ? MyColors.textPrimaryDark
-              : MyColors.textPrimaryLight,
+          color: isDark ? MyColors.textPrimaryDark : MyColors.textPrimaryLight,
           fontWeight: FontWeight.w500,
         ),
       ),
@@ -47,9 +38,7 @@ class MyHelperFunctions {
       action: (actionLabel != null && onAction != null)
           ? SnackBarAction(
               label: actionLabel,
-              textColor: isDark
-                  ? MyColors.blueDark
-                  : MyColors.blue,
+              textColor: isDark ? MyColors.blueDark : MyColors.blue,
               onPressed: onAction,
             )
           : null,
@@ -91,24 +80,11 @@ class MyHelperFunctions {
             borderRadius: BorderRadius.circular(20),
           ),
 
-          titlePadding: const EdgeInsets.fromLTRB(
-            24,
-            20,
-            24,
-            8,
-          ),
+          titlePadding: const EdgeInsets.fromLTRB(24, 20, 24, 8),
 
-          contentPadding: const EdgeInsets.fromLTRB(
-            24,
-            8,
-            24,
-            16,
-          ),
+          contentPadding: const EdgeInsets.fromLTRB(24, 8, 24, 16),
 
-          actionsPadding: const EdgeInsets.only(
-            right: 16,
-            bottom: 10,
-          ),
+          actionsPadding: const EdgeInsets.only(right: 16, bottom: 10),
 
           title: Text(
             title,
@@ -156,9 +132,7 @@ class MyHelperFunctions {
               style: ElevatedButton.styleFrom(
                 elevation: 0,
 
-                backgroundColor: isDark
-                    ? MyColors.blueDark
-                    : MyColors.blue,
+                backgroundColor: isDark ? MyColors.blueDark : MyColors.blue,
 
                 foregroundColor: MyColors.white,
 
@@ -190,16 +164,8 @@ class MyHelperFunctions {
   // NAVIGATION
   // ============================================================
 
-  static void navigateToScreen(
-    BuildContext context,
-    Widget screen,
-  ) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => screen,
-      ),
-    );
+  static void navigateToScreen(BuildContext context, Widget screen) {
+    Navigator.push(context, MaterialPageRoute(builder: (_) => screen));
   }
 
   // ============================================================
@@ -223,24 +189,17 @@ class MyHelperFunctions {
   static bool isDarkMode(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark;
 
-
   // ============================================================
   // LIST
   // ============================================================
 
-  static List<T> removeDuplicates<T>(
-    List<T> list,
-  ) =>
-      list.toSet().toList();
+  static List<T> removeDuplicates<T>(List<T> list) => list.toSet().toList();
 
   // ============================================================
   // WIDGETS
   // ============================================================
 
-  static List<Widget> wrapWidgets(
-    List<Widget> widgets,
-    int rowSize,
-  ) {
+  static List<Widget> wrapWidgets(List<Widget> widgets, int rowSize) {
     final wrapped = <Widget>[];
 
     for (int i = 0; i < widgets.length; i += rowSize) {
@@ -250,9 +209,7 @@ class MyHelperFunctions {
           children: widgets
               .sublist(
                 i,
-                i + rowSize > widgets.length
-                    ? widgets.length
-                    : i + rowSize,
+                i + rowSize > widgets.length ? widgets.length : i + rowSize,
               )
               .toList(),
         ),

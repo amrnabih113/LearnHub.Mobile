@@ -1,0 +1,68 @@
+flutter_native_splash:
+  # ============================================================
+  # GENERAL
+  # ============================================================
+
+  fullscreen: true
+
+  # ============================================================
+  # LIGHT MODE
+  # ============================================================
+
+  color: "#F7FAFC"
+
+  image: "assets/images/launcher_icon_light.png"
+
+  # ============================================================
+  # DARK MODE
+  # ============================================================
+
+  color_dark: "#01324A"
+
+  image_dark: "assets/images/launcher_icon_dark.png"
+
+  # ============================================================
+  # IMAGE POSITIONING
+  # ============================================================
+
+  android_gravity: center
+  ios_content_mode: center
+  web_image_mode: center
+
+  # ============================================================
+  # PLATFORM-SPECIFIC WEB
+  # ============================================================
+
+  image_web: "assets/images/launcher_icon_light.png"
+  image_dark_web: "assets/images/launcher_icon_dark.png"
+
+  # ============================================================
+  # ANDROID
+  # ============================================================
+
+  image_android: "assets/images/launcher_icon_light.png"
+  image_dark_android: "assets/images/launcher_icon_dark.png"
+
+  # ============================================================
+  # IOS
+  # ============================================================
+
+  image_ios: "assets/images/launcher_icon_light.png"
+  image_dark_ios: "assets/images/launcher_icon_dark.png"
+
+  # ============================================================
+  # ANDROID 12+
+  # ============================================================
+
+  android_12:
+    # Light
+    color: "#F7FAFC"
+    image: "assets/images/launcher_icon_light.png"
+
+    # Dark
+    color_dark: "#01324A"
+    image_dark: "assets/images/launcher_icon_dark.png"
+
+    # Background behind Android 12 splash icon
+    icon_background_color: "#F7FAFC"
+    icon_background_color_dark: "#01324A"

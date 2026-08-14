@@ -1,17 +1,8 @@
 import 'package:flutter/widgets.dart';
 
-enum DeviceType {
-  smallPhone,
-  phone,
-  tablet,
-  largeTablet,
-  desktop,
-}
+enum DeviceType { smallPhone, phone, tablet, largeTablet, desktop }
 
-enum ScreenOrientation {
-  portrait,
-  landscape,
-}
+enum ScreenOrientation { portrait, landscape }
 
 class ResponsiveHelper {
   ResponsiveHelper._();
@@ -24,6 +15,12 @@ class ResponsiveHelper {
   static const double phoneBreakpoint = 600;
   static const double tabletBreakpoint = 900;
   static const double desktopBreakpoint = 1200;
+
+  /// Width at which a navigation drawer becomes a permanent sidebar.
+  static const double sidebarBreakpoint = 1100;
+
+  /// Width at which desktop content gets a larger layout.
+  static const double largeDesktopBreakpoint = 1440;
 
   // ============================================================
   // SCREEN INFORMATION
@@ -56,46 +53,25 @@ class ResponsiveHelper {
   }
 
   // ============================================================
-  // SHORTEST / LONGEST SIDE
-  // ============================================================
-
-  /// The shortest screen dimension.
-  ///
-  /// This is useful for determining the actual device class.
-  /// A tablet remains a tablet when rotated.
-  static double shortestSide(BuildContext context) {
-    final size = screenSize(context);
-
-    return size.width < size.height ? size.width : size.height;
-  }
-
-  /// The longest screen dimension.
-  static double longestSide(BuildContext context) {
-    final size = screenSize(context);
-
-    return size.width > size.height ? size.width : size.height;
-  }
-
-  // ============================================================
   // DEVICE TYPE
   // ============================================================
 
   static DeviceType deviceTypeFromContext(BuildContext context) {
-    final shortest = shortestSide(context);
+    final width = screenWidth(context);
 
-    if (shortest >= desktopBreakpoint) {
+    if (width >= desktopBreakpoint) {
       return DeviceType.desktop;
     }
 
-    if (shortest >= tabletBreakpoint) {
+    if (width >= tabletBreakpoint) {
       return DeviceType.largeTablet;
     }
 
-    if (shortest >= phoneBreakpoint) {
+    if (width >= phoneBreakpoint) {
       return DeviceType.tablet;
     }
 
-    if (shortest >= smallPhoneBreakpoint) {
+    if (width >= smallPhoneBreakpoint) {
       return DeviceType.phone;
     }
 
@@ -122,61 +98,85 @@ class ResponsiveHelper {
       deviceTypeFromContext(context) == DeviceType.desktop;
 
   // ============================================================
-  // ORIENTATION SCALE
+  // LAYOUT CHECKS
   // ============================================================
 
-  static double scale(BuildContext context) {
-    final type = deviceTypeFromContext(context);
+  /// Mobile layout.
+  ///
+  /// Drawer navigation is used.
+  static bool isMobileLayout(BuildContext context) {
+    return screenWidth(context) < sidebarBreakpoint;
+  }
 
-    if (isPortrait(context)) {
-      switch (type) {
-        case DeviceType.smallPhone:
-          return 0.90;
+  /// Desktop/tablet-wide layout.
+  ///
+  /// Permanent sidebar is used.
+  static bool isSidebarLayout(BuildContext context) {
+    return screenWidth(context) >= sidebarBreakpoint;
+  }
 
-        case DeviceType.phone:
-          return 1.00;
-
-        case DeviceType.tablet:
-          return 1.10;
-
-        case DeviceType.largeTablet:
-          return 1.15;
-
-        case DeviceType.desktop:
-          return 1.00;
-      }
-    }
-
-    // ----------------------------------------------------------
-    // LANDSCAPE
-    // ----------------------------------------------------------
-
-    switch (type) {
-      case DeviceType.smallPhone:
-        return 0.85;
-
-      case DeviceType.phone:
-        return 0.90;
-
-      case DeviceType.tablet:
-        return 1.00;
-
-      case DeviceType.largeTablet:
-        return 1.05;
-
-      case DeviceType.desktop:
-        return 1.00;
-    }
+  /// Large desktop layout.
+  static bool isLargeDesktop(BuildContext context) {
+    return screenWidth(context) >= largeDesktopBreakpoint;
   }
 
   // ============================================================
-  // RESPONSIVE VALUE
+  // SIDEBAR
   // ============================================================
 
-  static double responsiveValue(
-    BuildContext context,
-    double baseValue,
-  ) {
+  static double sidebarWidth(BuildContext context) {
+    final width = screenWidth(context);
+
+    if (width >= largeDesktopBreakpoint) {
+      return 280;
+    }
+
+    return 250;
+  }
+
+  // ============================================================
+  // CONTENT WIDTH
+  // ============================================================
+
+  static double maxContentWidth(BuildContext context) {
+    if (isLargeDesktop(context)) {
+      return 1400;
+    }
+
+    if (isSidebarLayout(context)) {
+      return 1200;
+    }
+
+    return double.infinity;
+  }
+
+  // ============================================================
+  // RESPONSIVE SCALE
+  // ============================================================
+
+  static double scale(BuildContext context) {
+    final width = screenWidth(context);
+
+    if (width < smallPhoneBreakpoint) {
+      return 0.90;
+    }
+
+    if (width < phoneBreakpoint) {
+      return 1.00;
+    }
+
+    if (width < tabletBreakpoint) {
+      return 1.10;
+    }
+
+    if (width < desktopBreakpoint) {
+      return 1.15;
+    }
+
+    return 1.00;
+  }
+
+  static double responsiveValue(BuildContext context, double baseValue) {
     return baseValue * scale(context);
   }
 
@@ -184,9 +184,6 @@ class ResponsiveHelper {
   // RESPONSIVE WIDTH VALUE
   // ============================================================
 
-  /// Calculates a value based on the available width.
-  ///
-  /// Useful for things such as cards and containers.
   static double responsiveWidth(
     BuildContext context,
     double baseValue, {
@@ -198,10 +195,7 @@ class ResponsiveHelper {
 
     final calculatedScale = width / referenceWidth;
 
-    final clampedScale = calculatedScale.clamp(
-      minScale,
-      maxScale,
-    );
+    final clampedScale = calculatedScale.clamp(minScale, maxScale);
 
     return baseValue * clampedScale;
   }
@@ -210,9 +204,6 @@ class ResponsiveHelper {
   // RESPONSIVE HEIGHT VALUE
   // ============================================================
 
-  /// Calculates a value based on the available height.
-  ///
-  /// Particularly useful in landscape mode.
   static double responsiveHeight(
     BuildContext context,
     double baseValue, {
@@ -224,100 +215,56 @@ class ResponsiveHelper {
 
     final calculatedScale = height / referenceHeight;
 
-    final clampedScale = calculatedScale.clamp(
-      minScale,
-      maxScale,
-    );
+    final clampedScale = calculatedScale.clamp(minScale, maxScale);
 
     return baseValue * clampedScale;
   }
 
   // ============================================================
-  // ORIENTATION-AWARE VALUE
+  // RESPONSIVE DIMENSION
   // ============================================================
 
-  /// Portrait  -> calculated from width
-  /// Landscape -> calculated from height
-  static double responsiveDimension(
-    BuildContext context,
-    double baseValue,
-  ) {
+  static double responsiveDimension(BuildContext context, double baseValue) {
     if (isPortrait(context)) {
-      return responsiveWidth(
-        context,
-        baseValue,
-      );
+      return responsiveWidth(context, baseValue);
     }
 
-    return responsiveHeight(
-      context,
-      baseValue,
-    );
+    return responsiveHeight(context, baseValue);
   }
 
   // ============================================================
   // RESPONSIVE GAP
   // ============================================================
 
-  static double responsiveGap(
-    BuildContext context,
-    double baseGap,
-  ) {
-    return responsiveDimension(
-      context,
-      baseGap,
-    );
+  static double responsiveGap(BuildContext context, double baseGap) {
+    return responsiveDimension(context, baseGap);
   }
 
   // ============================================================
   // RESPONSIVE PADDING
   // ============================================================
 
-  static EdgeInsets responsivePadding(
-    BuildContext context,
-    double base,
-  ) {
-    final value = responsiveDimension(
-      context,
-      base,
-    );
+  static EdgeInsets responsivePadding(BuildContext context, double base) {
+    final value = responsiveDimension(context, base);
 
     return EdgeInsets.all(value);
   }
-
-  // ============================================================
-  // RESPONSIVE HORIZONTAL PADDING
-  // ============================================================
 
   static EdgeInsets responsiveHorizontalPadding(
     BuildContext context,
     double base,
   ) {
-    final value = responsiveWidth(
-      context,
-      base,
-    );
+    final value = responsiveWidth(context, base);
 
-    return EdgeInsets.symmetric(
-      horizontal: value,
-    );
+    return EdgeInsets.symmetric(horizontal: value);
   }
-
-  // ============================================================
-  // RESPONSIVE VERTICAL PADDING
-  // ============================================================
 
   static EdgeInsets responsiveVerticalPadding(
     BuildContext context,
     double base,
   ) {
-    final value = responsiveHeight(
-      context,
-      base,
-    );
+    final value = responsiveHeight(context, base);
 
-    return EdgeInsets.symmetric(
-      vertical: value,
-    );
+    return EdgeInsets.symmetric(vertical: value);
   }
 }

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:learnhub/theme_preview.dart';
 import 'core/themes/my_theme.dart';
 import 'package:device_preview/device_preview.dart';
 
 import 'generated/l10n.dart';
 
 void main() {
-  runApp(DevicePreview(enabled: true, builder: (context) => const MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -20,7 +21,6 @@ class _MyAppState extends State<MyApp> {
   ThemeMode _themeMode = ThemeMode.light;
 
   void _toggleTheme() {
-    
     setState(() {
       _themeMode = _themeMode == ThemeMode.light
           ? ThemeMode.dark
@@ -49,16 +49,10 @@ class _MyAppState extends State<MyApp> {
       darkTheme: MyTheme.darkTheme(context, const Locale('en')),
 
       themeMode: _themeMode,
-      home: Scaffold(
-        body: Center(
-          child: ElevatedButton(
-            onPressed: _toggleTheme,
-            child: const Text('Toggle Theme'),
-          ),
-        ),
+      home: ThemePreviewScreen(
+        onToggleTheme: _toggleTheme,
+        isDark: _themeMode == ThemeMode.dark,
       ),
     );
-   
   }
 }
-
