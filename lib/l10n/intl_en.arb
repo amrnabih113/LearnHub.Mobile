@@ -1,0 +1,16 @@
+{
+  "error_field_required": "This field is required",
+  "error_email_required": "Email is required",
+  "error_email_invalid": "Please enter a valid email address",
+  "error_password_required": "Password is required",
+  "error_password_short": "Password must be at least 6 characters",
+  "error_password_uppercase": "Password must contain at least one uppercase letter",
+  "error_password_number": "Password must contain at least one number",
+  "error_phone_required": "Phone number is required",
+  "error_phone_invalid": "Please enter a valid phone number",
+  "error_confirm_password_required": "Please confirm your password",
+  "error_passwords_not_match": "Passwords do not match",
+  "error_username_required": "Username is required",
+  "error_username_at": "Username cannot contain @",
+  "error_username_short": "Username must be at least 3 characters"
+}
