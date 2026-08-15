@@ -17,7 +17,7 @@ class MyColors {
   static const Color blueDark = Color(0xFF3D87AA);
 
   /// LearnHub accent yellow
-  static const Color yellow = Color(0xFFF2B84B);
+  static const Color yellow = Color(0xFFF6AE3C); //#F6AE3C
 
   // ============================================================
   // LIGHT MODE
@@ -51,7 +51,7 @@ class MyColors {
   // TEXT
   // ============================================================
 
-  static const Color textPrimaryLight = Color(0xFF012248);
+  static const Color textPrimaryLight = Color(0xFF01324A); //#01324A
   static const Color textSecondaryLight = Color(0xFF576976);
 
   static const Color textPrimaryDark = Color(0xFFEEF3F7);

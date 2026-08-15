@@ -19,9 +19,11 @@ class MyButtons {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: MyColors.accentButton,
-        foregroundColor: MyColors.navy,
+        foregroundColor: MyColors.textPrimaryLight,
         disabledBackgroundColor: MyColors.accentButton.withValues(alpha: 0.6),
-        disabledForegroundColor: MyColors.navy.withValues(alpha: 0.6),
+        disabledForegroundColor: MyColors.textPrimaryLight.withValues(
+          alpha: 0.6,
+        ),
         textStyle: const TextStyle(fontWeight: FontWeight.w600),
       ),
       child: child,

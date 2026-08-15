@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/utils/app_routes.dart';
+import '../utils/app_routes.dart';
 import 'destinations.dart';
 
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../extensions/my_sizes_extensions.dart';
 
+import '../../extensions/my_sizes_extensions.dart';
 import '../../utils/my_colors.dart';
 
 class MyTextFieldTheme {

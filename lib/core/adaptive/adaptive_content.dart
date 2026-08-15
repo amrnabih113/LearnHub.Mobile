@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+
 import 'adaptive_value.dart';
 
 /// Constrains and centers application content according to the available

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../extensions/my_sizes_extensions.dart';
 
+import '../../extensions/my_sizes_extensions.dart';
 import '../../utils/my_colors.dart';
 
 class MyElevationButtonTheme {
@@ -72,7 +72,7 @@ class MyElevationButtonTheme {
 
         shape: const WidgetStatePropertyAll(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(6)),
+            borderRadius: BorderRadius.all(Radius.circular(15)),
           ),
         ),
 
@@ -180,7 +180,7 @@ class MyElevationButtonTheme {
         // --------------------------------------------------------
         shape: const WidgetStatePropertyAll(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(6)),
+            borderRadius: BorderRadius.all(Radius.circular(15)),
           ),
         ),
 

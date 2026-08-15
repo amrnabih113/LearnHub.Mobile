@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:learnhub/app_router.dart';
+import 'app_router.dart';
 
 import 'core/themes/my_theme.dart';
 import 'generated/l10n.dart';

@@ -11,15 +11,11 @@ class MyTextTheme {
   // LIGHT MODE
   // ============================================================
 
-  static TextTheme getLightTextTheme(
-    BuildContext context,
-    Locale? locale,
-  ) {
+  static TextTheme getLightTextTheme(BuildContext context, Locale? locale) {
     return TextTheme(
       // ==========================================================
       // DISPLAY
       // ==========================================================
-
       displayLarge: GoogleFonts.inter(
         fontSize: context.displayXl,
         fontWeight: FontWeight.bold,
@@ -41,7 +37,6 @@ class MyTextTheme {
       // ==========================================================
       // HEADLINES
       // ==========================================================
-
       headlineLarge: GoogleFonts.inter(
         fontSize: context.headlineXl,
         fontWeight: FontWeight.bold,
@@ -63,16 +58,15 @@ class MyTextTheme {
       // ==========================================================
       // TITLES
       // ==========================================================
-
       titleLarge: GoogleFonts.inter(
         fontSize: context.titleLg,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryLight,
       ),
 
       titleMedium: GoogleFonts.inter(
         fontSize: context.titleMd,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryLight,
       ),
 
@@ -85,7 +79,6 @@ class MyTextTheme {
       // ==========================================================
       // BODY
       // ==========================================================
-
       bodyLarge: GoogleFonts.inter(
         fontSize: context.bodyLg,
         fontWeight: FontWeight.w500,
@@ -107,7 +100,6 @@ class MyTextTheme {
       // ==========================================================
       // LABELS
       // ==========================================================
-
       labelLarge: GoogleFonts.inter(
         fontSize: context.labelLg,
         fontWeight: FontWeight.w500,
@@ -132,15 +124,11 @@ class MyTextTheme {
   // DARK MODE
   // ============================================================
 
-  static TextTheme getDarkTextTheme(
-    BuildContext context,
-    Locale? locale,
-  ) {
+  static TextTheme getDarkTextTheme(BuildContext context, Locale? locale) {
     return TextTheme(
       // ==========================================================
       // DISPLAY
       // ==========================================================
-
       displayLarge: GoogleFonts.inter(
         fontSize: context.displayXl,
         fontWeight: FontWeight.bold,
@@ -162,7 +150,6 @@ class MyTextTheme {
       // ==========================================================
       // HEADLINES
       // ==========================================================
-
       headlineLarge: GoogleFonts.inter(
         fontSize: context.headlineXl,
         fontWeight: FontWeight.bold,
@@ -184,7 +171,6 @@ class MyTextTheme {
       // ==========================================================
       // TITLES
       // ==========================================================
-
       titleLarge: GoogleFonts.inter(
         fontSize: context.titleLg,
         fontWeight: FontWeight.w600,
@@ -193,20 +179,19 @@ class MyTextTheme {
 
       titleMedium: GoogleFonts.inter(
         fontSize: context.titleMd,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryDark,
       ),
 
       titleSmall: GoogleFonts.inter(
         fontSize: context.titleSm,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryDark,
       ),
 
       // ==========================================================
       // BODY
       // ==========================================================
-
       bodyLarge: GoogleFonts.inter(
         fontSize: context.bodyLg,
         fontWeight: FontWeight.w500,
@@ -228,7 +213,6 @@ class MyTextTheme {
       // ==========================================================
       // LABELS
       // ==========================================================
-
       labelLarge: GoogleFonts.inter(
         fontSize: context.labelLg,
         fontWeight: FontWeight.w500,

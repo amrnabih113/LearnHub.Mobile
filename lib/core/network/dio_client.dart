@@ -8,7 +8,6 @@ import 'package:path_provider/path_provider.dart';
 
 import '../services/secure_storage_service.dart';
 import '../utils/my_constants.dart';
-import 'dio_auth_interceptor.dart';
 
 class DioClient {
   final Dio dio;

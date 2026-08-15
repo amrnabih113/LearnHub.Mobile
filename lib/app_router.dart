@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:learnhub/core/adaptive/adaptive_app_shell.dart';
-import 'package:learnhub/core/navigation/navigation.dart';
-import 'package:learnhub/core/utils/app_routes.dart';
-import 'package:learnhub/test/placeholder_page.dart';
+
+import 'core/adaptive/adaptive_app_shell.dart';
+import 'core/navigation/navigation.dart';
+import 'core/utils/app_routes.dart';
+import 'features/auth/presentation/screens/login_screen.dart';
+import 'features/auth/presentation/screens/register_screen.dart';
+import 'test/placeholder_page.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: AppRoutes.home,
@@ -18,14 +21,14 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.login,
       builder: (context, state) {
-        return const PlaceholderPage(title: 'Login');
+        return LoginScreen();
       },
     ),
 
     GoRoute(
       path: AppRoutes.register,
       builder: (context, state) {
-        return const PlaceholderPage(title: 'Register');
+        return RegisterScreen();
       },
     ),
     StatefulShellRoute.indexedStack(
