@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:learnhub/core/helpers/my_helper_functions.dart';
-import 'package:learnhub/core/helpers/my_loaders.dart';
-import 'package:learnhub/core/ui/my_avatar.dart';
-import 'package:learnhub/core/ui/my_buttons.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
+import '../core/helpers/my_helper_functions.dart';
+import '../core/helpers/my_loaders.dart';
+import '../core/ui/my_avatar.dart';
+import '../core/ui/my_buttons.dart';
+import '../core/utils/my_colors.dart';
 
 class ThemePreviewScreen extends StatefulWidget {
   const ThemePreviewScreen({

@@ -27,14 +27,14 @@ flutter_native_splash:
 
   android_gravity: center
   ios_content_mode: center
-  web_image_mode: center
+  # web_image_mode: center
 
   # ============================================================
   # PLATFORM-SPECIFIC WEB
   # ============================================================
-
-  image_web: "assets/images/launcher_icon_light.png"
-  image_dark_web: "assets/images/launcher_icon_dark.png"
+  web: false
+  # image_web: "assets/images/launcher_icon_light.png"
+  # image_dark_web: "assets/images/launcher_icon_dark.png"
 
   # ============================================================
   # ANDROID

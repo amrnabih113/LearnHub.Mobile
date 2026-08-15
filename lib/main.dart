@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:learnhub/theme_preview.dart';
-import 'core/themes/my_theme.dart';
-import 'package:device_preview/device_preview.dart';
+import 'package:learnhub/app_router.dart';
 
+import 'core/themes/my_theme.dart';
 import 'generated/l10n.dart';
 
 void main() {
@@ -30,10 +29,14 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    const locale = Locale('en');
+
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
 
-      locale: const Locale('en'),
+      title: 'LearnHub',
+
+      locale: locale,
 
       localizationsDelegates: const [
         S.delegate,
@@ -44,15 +47,13 @@ class _MyAppState extends State<MyApp> {
 
       supportedLocales: S.delegate.supportedLocales,
 
-      theme: MyTheme.lightTheme(context, const Locale('en')),
+      theme: MyTheme.lightTheme(context, locale),
 
-      darkTheme: MyTheme.darkTheme(context, const Locale('en')),
+      darkTheme: MyTheme.darkTheme(context, locale),
 
       themeMode: _themeMode,
-      home: ThemePreviewScreen(
-        onToggleTheme: _toggleTheme,
-        isDark: _themeMode == ThemeMode.dark,
-      ),
+
+      routerConfig: appRouter,
     );
   }
 }
