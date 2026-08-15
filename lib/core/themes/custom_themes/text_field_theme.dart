@@ -31,7 +31,7 @@ class MyTextFieldTheme {
     final padding = context.spaceMd - 5;
     final iconSize = context.spaceXl;
     final fontSize = context.bodyMd;
-    final borderRadius = context.radiusSm;
+    final borderRadius = context.radiusLg;
 
     return InputDecorationThemeData(
       fillColor: MyColors.inputBackgroundLight,
@@ -84,7 +84,7 @@ class MyTextFieldTheme {
       enabledBorder: _border(color: MyColors.borderLight, radius: borderRadius),
 
       focusedBorder: _border(
-        color: MyColors.blue,
+        color: MyColors.borderLight,
         width: 2,
         radius: borderRadius,
       ),
@@ -113,7 +113,7 @@ class MyTextFieldTheme {
     final padding = context.spaceMd - 5;
     final iconSize = context.spaceXl;
     final fontSize = context.bodyMd;
-    final borderRadius = context.radiusSm;
+    final borderRadius = context.radiusLg;
 
     return InputDecorationThemeData(
       fillColor: MyColors.surfaceAltDark,
@@ -166,7 +166,7 @@ class MyTextFieldTheme {
       enabledBorder: _border(color: MyColors.borderDark, radius: borderRadius),
 
       focusedBorder: _border(
-        color: MyColors.blueDark,
+        color: MyColors.borderDark,
         width: 2,
         radius: borderRadius,
       ),

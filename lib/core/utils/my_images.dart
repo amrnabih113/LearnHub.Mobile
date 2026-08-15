@@ -9,4 +9,5 @@ class MyImages {
   static const String googleLogo = 'assets/images/google_logo.svg';
 
   static const String loginSide = 'assets/images/login_side.png';
+  static const String landingImage = 'assets/images/landing_image.png';
 }

@@ -174,7 +174,7 @@ class LoginForm extends StatelessWidget {
 
                     child: Text(
                       'Login',
-                      style: context.bodyLarge.copyWith(
+                      style: context.titleMedium.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -197,7 +197,7 @@ class LoginForm extends StatelessWidget {
                         WidgetSpan(
                           child: InkWell(
                             onTap: () {
-                              context.go(AppRoutes.register);
+                              context.pushReplacement(AppRoutes.register);
                             },
                             child: Text(
                               'Register',

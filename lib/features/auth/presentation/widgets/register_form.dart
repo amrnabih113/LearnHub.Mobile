@@ -80,6 +80,7 @@ class RegisterForm extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                             ),
                           ),
+                          SizedBox(height: context.gap(8)),
                           TextFormField(
                             decoration: InputDecoration(hintText: 'John'),
                           ),
@@ -98,6 +99,7 @@ class RegisterForm extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                             ),
                           ),
+                          SizedBox(height: context.gap(8)),
                           TextFormField(
                             decoration: InputDecoration(hintText: 'Doe'),
                           ),
@@ -209,18 +211,15 @@ class RegisterForm extends StatelessWidget {
 
                 SizedBox(height: context.gap(30)),
 
-                // ================================================================
-                // LOGIN BUTTON
-                // ================================================================
                 SizedBox(
                   width: double.infinity,
                   height: 52,
                   child: MyButtons.accent(
                     onPressed: () {},
-
+                    context: context,
                     child: Text(
                       'Create Account',
-                      style: context.bodyLarge.copyWith(
+                      style: context.titleMedium.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -243,7 +242,7 @@ class RegisterForm extends StatelessWidget {
                         WidgetSpan(
                           child: GestureDetector(
                             onTap: () {
-                              context.go(AppRoutes.login);
+                              context.pushReplacement(AppRoutes.login);
                             },
                             child: Text(
                               'login',

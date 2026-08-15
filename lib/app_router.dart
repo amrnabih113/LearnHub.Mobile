@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:learnhub/features/landing/presentation/screens/landing_screen.dart';
 
 import 'core/adaptive/adaptive_app_shell.dart';
 import 'core/navigation/navigation.dart';
@@ -9,12 +10,12 @@ import 'features/auth/presentation/screens/register_screen.dart';
 import 'test/placeholder_page.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: AppRoutes.home,
+  initialLocation: AppRoutes.landing,
   routes: [
     GoRoute(
       path: AppRoutes.landing,
       builder: (context, state) {
-        return const PlaceholderPage(title: 'Landing');
+        return LandingScreen();
       },
     ),
 

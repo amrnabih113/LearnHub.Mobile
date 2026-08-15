@@ -53,7 +53,8 @@ class AdaptiveContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final resolvedPadding = padding ??
+    final resolvedPadding =
+        padding ??
         EdgeInsets.symmetric(
           horizontal: context.adaptiveValue<double>(
             compact: 16,
@@ -67,13 +68,8 @@ class AdaptiveContent extends StatelessWidget {
       child: Padding(
         padding: resolvedPadding,
         child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxWidth: maxWidth,
-          ),
-          child: SizedBox(
-            width: double.infinity,
-            child: child,
-          ),
+          constraints: BoxConstraints(maxWidth: maxWidth),
+          child: SizedBox(width: double.infinity, child: child),
         ),
       ),
     );
