@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
+import 'package:learnhub/core/extensions/text_theme_extension.dart';
 import 'package:learnhub/core/utils/my_colors.dart';
 
 class LearnerBanner extends StatelessWidget {
@@ -13,18 +15,18 @@ class LearnerBanner extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
         border: Border.all(color: MyColors.textWhite.withValues(alpha: 0.07)),
       ),
-      child: const Row(
+      child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.auto_awesome, size: 16, color: MyColors.yellow),
-          SizedBox(width: 7),
+          Icon(
+            Icons.auto_awesome,
+            size: context.iconSm,
+            color: MyColors.yellow,
+          ),
+          SizedBox(width: context.gap(7)),
           Text(
             '25K+ active learners',
-            style: TextStyle(
-              color: MyColors.yellow,
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-            ),
+            style: context.bodySmall.copyWith(color: MyColors.yellow),
           ),
         ],
       ),

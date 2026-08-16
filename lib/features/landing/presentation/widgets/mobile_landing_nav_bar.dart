@@ -13,7 +13,7 @@ class MobileLandingNavBar extends StatelessWidget {
     return Container(
       height: context.appBarHeight,
       width: double.infinity,
-      padding: context.paddingHorizontalLg,
+      padding: context.paddingHorizontalXl,
       child: AdaptiveLayout(
         compact: MobileActions(),
         medium: TabletActions(),
@@ -51,6 +51,16 @@ class TabletActions extends StatelessWidget {
         SizedBox(width: context.gap(40)),
         // ----------------------------------------------------
         MyEndDrawerButton(),
+        SizedBox(width: context.gap(10)),
+        IconButton(
+          onPressed: null,
+          icon: Icon(
+            Icons.wb_sunny_outlined,
+            color: isDark
+                ? MyColors.textPrimaryDark
+                : MyColors.textPrimaryLight,
+          ),
+        ),
       ],
     );
   }
@@ -72,9 +82,7 @@ class MobileActions extends StatelessWidget {
         const Spacer(),
         IconButton(
           tooltip: 'Search',
-          onPressed: () {
-            // TODO: Open mobile search.
-          },
+          onPressed: () {},
           icon: Icon(
             Icons.search,
             color: isDark
@@ -83,9 +91,6 @@ class MobileActions extends StatelessWidget {
           ),
         ),
 
-        // ----------------------------------------------------
-        // MENU
-        // ----------------------------------------------------
         MyEndDrawerButton(),
       ],
     );

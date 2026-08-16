@@ -7,8 +7,8 @@ import '../../../../core/extensions/my_sizes_extensions.dart';
 import '../../../../core/extensions/text_theme_extension.dart';
 import '../../../../core/utils/my_colors.dart';
 
-class WebLoginSideBar extends StatelessWidget {
-  const WebLoginSideBar({super.key});
+class WebAuthSideDecoration extends StatelessWidget {
+  const WebAuthSideDecoration({super.key});
 
   @override
   Widget build(BuildContext context) {

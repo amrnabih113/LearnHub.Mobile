@@ -25,14 +25,14 @@ class AppLogo extends StatelessWidget {
             text: 'Learn',
             style: context.titleMedium.copyWith(
               color: logoColor,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w900,
             ),
             children: [
               TextSpan(
                 text: 'Hub',
                 style: context.titleMedium.copyWith(
                   color: MyColors.yellow,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w900,
                 ),
               ),
             ],

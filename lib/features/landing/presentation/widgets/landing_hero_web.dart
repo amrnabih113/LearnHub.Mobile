@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
 import 'package:learnhub/core/extensions/text_theme_extension.dart';
-import 'package:learnhub/core/ui/my_buttons.dart';
 import 'package:learnhub/core/utils/my_colors.dart';
 import 'package:learnhub/core/utils/my_images.dart';
 import 'package:learnhub/features/auth/presentation/widgets/decorative_circle.dart';
 import 'package:learnhub/features/auth/presentation/widgets/dot_grid.dart';
 import 'package:learnhub/features/auth/presentation/widgets/flow_lines_painter.dart';
+import 'package:learnhub/features/landing/presentation/widgets/benefits.dart';
+import 'package:learnhub/features/landing/presentation/widgets/hero_search.dart';
 import 'package:learnhub/features/landing/presentation/widgets/learner_banner.dart';
 
-class LandingHero extends StatelessWidget {
-  const LandingHero({super.key});
+class LandingHeroWeb extends StatelessWidget {
+  const LandingHeroWeb({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class LandingHero extends StatelessWidget {
         gradient: LinearGradient(
           colors: isDark
               ? [MyColors.navy, MyColors.backgroundDark]
-              : [MyColors.textPrimaryLight, MyColors.textPrimaryLight],
+              : [MyColors.textPrimaryLight, MyColors.navy],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -75,19 +76,22 @@ class LandingHero extends StatelessWidget {
 
             // MAIN HERO CONTENT
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 55),
+              padding: EdgeInsets.symmetric(
+                horizontal: context.gap(70),
+                vertical: context.gap(55),
+              ),
               child: Row(
                 children: [
                   // LEFT
                   Expanded(
                     flex: 5,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: .start,
+                      mainAxisAlignment: .center,
                       children: [
                         LearnerBanner(),
 
-                        const SizedBox(height: 30),
+                        SizedBox(height: context.gap(30)),
 
                         Text(
                           'Learn. Build.',
@@ -107,7 +111,7 @@ class LandingHero extends StatelessWidget {
                         const SizedBox(height: 22),
 
                         SizedBox(
-                          width: 520,
+                          width: context.screenWidth * 0.35,
                           child: Text(
                             'Discover practical courses, build real skills, '
                             'and move closer to your goals — at your own pace.',
@@ -117,76 +121,17 @@ class LandingHero extends StatelessWidget {
                           ),
                         ),
 
-                        SizedBox(height: 30),
+                        SizedBox(height: context.gap(30)),
 
-                        Row(
-                          children: [
-                            Expanded(
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  hintText:
-                                      'Search courses, topics, instructors...',
-                                  prefixIcon: const Padding(
-                                    padding: EdgeInsets.all(14),
-                                    child: Icon(Icons.search),
-                                  ),
-                                  contentPadding: EdgeInsets.symmetric(
-                                    vertical: context.gap(14),
-                                  ),
-                                ),
-                              ),
-                            ),
+                        HeroSearch(),
 
-                            SizedBox(width: context.gap(10)),
-                            SizedBox(
-                              height: context.buttonHeightLg,
-                              width: context.gap(140),
-                              child: MyButtons.accent(
-                                onPressed: () {},
-                                child: const Text('Search'),
-                                context: context,
-                              ),
-                            ),
-                          ],
-                        ),
+                        SizedBox(height: context.gap(30)),
 
-                        SizedBox(height: 30),
-
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Benefit(
-                                icon: Icons.play_circle_outline,
-                                text: 'Free courses\navailable',
-                              ),
-                            ),
-
-                            Expanded(
-                              child: Benefit(
-                                icon: Icons.bookmark_border,
-                                text: 'Progress\nalways saved',
-                              ),
-                            ),
-
-                            Expanded(
-                              child: Benefit(
-                                icon: Icons.verified_outlined,
-                                text: 'Certificates\nincluded',
-                              ),
-                            ),
-
-                            Expanded(
-                              child: Benefit(
-                                icon: Icons.phone_android,
-                                text: 'Learn on any\ndevice',
-                              ),
-                            ),
-                          ],
-                        ),
+                        Benefits(),
                       ],
                     ),
                   ),
-                  SizedBox(width: 50),
+                  SizedBox(width: context.gap(50)),
                   // RIGHT
                   Expanded(
                     flex: 5,
@@ -201,34 +146,6 @@ class LandingHero extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class Benefit extends StatelessWidget {
-  final IconData icon;
-  final String text;
-
-  const Benefit({super.key, required this.icon, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(icon, color: MyColors.textWhite, size: 25),
-
-        const SizedBox(width: 10),
-
-        Flexible(
-          child: Text(
-            text,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(color: MyColors.textWhite, fontSize: 13),
-          ),
-        ),
-      ],
     );
   }
 }

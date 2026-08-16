@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../widgets/login_form.dart';
-import '../../widgets/web_login_Side_bar.dart';
+import '../../widgets/web_auth_side_decoration.dart';
 
 class LoginWeb extends StatelessWidget {
   const LoginWeb({super.key});
@@ -9,8 +9,8 @@ class LoginWeb extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        // side bar
-        const WebLoginSideBar(),
+        // side decoration
+        const WebAuthSideDecoration(),
         // login form
         Expanded(flex: 2, child: LoginForm()),
       ],

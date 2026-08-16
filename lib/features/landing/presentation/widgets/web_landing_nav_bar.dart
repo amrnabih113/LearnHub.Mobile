@@ -7,7 +7,7 @@ import 'package:learnhub/core/utils/app_routes.dart';
 import 'package:learnhub/core/utils/my_colors.dart';
 
 class WebLandingNavBar extends StatelessWidget {
-  WebLandingNavBar({super.key});
+  const WebLandingNavBar({super.key});
   @override
   Widget build(BuildContext context) {
     final bool isDark = MyColors.isDark(context);

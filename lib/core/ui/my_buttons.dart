@@ -30,8 +30,8 @@ class MyButtons {
           alpha: 0.6,
         ),
         textStyle: context != null
-            ? context.titleSmall
-            : TextStyle(fontWeight: FontWeight.bold),
+            ? context.bodyMedium.copyWith(fontWeight: FontWeight.w600)
+            : TextStyle(fontWeight: FontWeight.w600),
       ),
       child: child,
     );
