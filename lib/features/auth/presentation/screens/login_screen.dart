@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnhub/core/ui/dismiss_focus.dart';
 import '../../../../core/adaptive/adaptive_layout.dart';
 import '../../../../core/utils/my_colors.dart';
 import 'web/login_web.dart';
@@ -11,10 +12,12 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.surface(context),
-      body: AdaptiveLayout(
-        compact: LoginForm(),
-        medium: LoginForm(),
-        expanded: const LoginWeb(),
+      body: DismissFocus(
+        child: AdaptiveLayout(
+          compact: LoginForm(),
+          medium: LoginForm(),
+          expanded: const LoginWeb(),
+        ),
       ),
     );
   }

@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'app_router.dart';
-
+import 'package:device_preview/device_preview.dart';
 import 'core/themes/my_theme.dart';
 import 'generated/l10n.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true, // Set to false to disable Device Preview
+      builder: (context) => MyApp(), // Wrap your app
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {

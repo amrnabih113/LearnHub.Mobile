@@ -11,10 +11,14 @@ class LandingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: const MobileLandingDrawer(),
-      body: AdaptiveLayout(
-        compact: LandingMobile(),
-        medium: LandingMobile(),
-        expanded: LandingWeb(),
+      body: SafeArea(
+        bottom: false,
+        right: false,
+        child: AdaptiveLayout(
+          compact: LandingMobile(),
+          medium: LandingMobile(),
+          expanded: LandingWeb(),
+        ),
       ),
     );
   }

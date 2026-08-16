@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:learnhub/features/auth/presentation/screens/mobile/introduction_screen.dart';
 import 'package:learnhub/features/landing/presentation/screens/landing_screen.dart';
 
 import 'core/adaptive/adaptive_app_shell.dart';
@@ -10,26 +12,31 @@ import 'features/auth/presentation/screens/register_screen.dart';
 import 'test/placeholder_page.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: AppRoutes.landing,
+  initialLocation: kIsWeb ? AppRoutes.landing : AppRoutes.intro,
   routes: [
     GoRoute(
       path: AppRoutes.landing,
       builder: (context, state) {
-        return LandingScreen();
+        return const LandingScreen();
       },
     ),
-
+    GoRoute(
+      path: AppRoutes.intro,
+      builder: (context, state) {
+        return const IntroductionScreen();
+      },
+    ),
     GoRoute(
       path: AppRoutes.login,
       builder: (context, state) {
-        return LoginScreen();
+        return const LoginScreen();
       },
     ),
 
     GoRoute(
       path: AppRoutes.register,
       builder: (context, state) {
-        return RegisterScreen();
+        return const RegisterScreen();
       },
     ),
     StatefulShellRoute.indexedStack(

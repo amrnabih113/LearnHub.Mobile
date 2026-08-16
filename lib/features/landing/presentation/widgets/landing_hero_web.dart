@@ -16,9 +16,13 @@ class LandingHeroWeb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = MyColors.isDark(context);
+
     return Container(
-      height: context.screenHeight * 0.85,
       width: double.infinity,
+      padding: EdgeInsets.symmetric(
+        horizontal: context.gap(70),
+        vertical: context.gap(55),
+      ),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -29,65 +33,57 @@ class LandingHeroWeb extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
       ),
-      child: SingleChildScrollView(
-        child: Stack(
-          children: [
-            // Large circle
-            Positioned(
-              top: 55,
-              right: 360,
-              child: DecorativeCircle(
-                size: 300,
-                color: MyColors.blue,
-                opacity: 0.35,
-              ),
+      child: Stack(
+        children: [
+          Positioned(
+            top: 0,
+            right: 360,
+            child: DecorativeCircle(
+              size: 300,
+              color: MyColors.blue,
+              opacity: 0.35,
             ),
+          ),
 
-            // Second circle
-            Positioned(
-              top: 130,
-              right: 40,
-              child: DecorativeCircle(
-                size: 420,
-                color: MyColors.textWhite,
-                opacity: 0.12,
-              ),
+          Positioned(
+            top: 75,
+            right: 40,
+            child: DecorativeCircle(
+              size: 420,
+              color: MyColors.textWhite,
+              opacity: 0.12,
             ),
+          ),
 
-            // Dot grid
-            Positioned(
-              top: 260,
-              right: 520,
-              child: DotGrid(
-                rows: 7,
-                columns: 6,
-                spacing: 16,
-                color: MyColors.blue,
-                opacity: 0.55,
-              ),
+          Positioned(
+            top: 205,
+            right: 520,
+            child: DotGrid(
+              rows: 7,
+              columns: 6,
+              spacing: 16,
+              color: MyColors.blue,
+              opacity: 0.55,
             ),
+          ),
 
-            // Flowing lines at the bottom
-            Positioned.fill(
-              child: IgnorePointer(
-                child: CustomPaint(painter: FlowLinesPainter()),
-              ),
+          Positioned.fill(
+            child: IgnorePointer(
+              child: CustomPaint(painter: FlowLinesPainter()),
             ),
+          ),
 
-            // MAIN HERO CONTENT
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: context.gap(70),
-                vertical: context.gap(55),
-              ),
+          Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 1400),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // LEFT
                   Expanded(
                     flex: 5,
                     child: Column(
-                      crossAxisAlignment: .start,
-                      mainAxisAlignment: .center,
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         LearnerBanner(),
 
@@ -108,10 +104,10 @@ class LandingHeroWeb extends StatelessWidget {
                           ),
                         ),
 
-                        const SizedBox(height: 22),
+                        SizedBox(height: context.gap(22)),
 
-                        SizedBox(
-                          width: context.screenWidth * 0.35,
+                        ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 550),
                           child: Text(
                             'Discover practical courses, build real skills, '
                             'and move closer to your goals — at your own pace.',
@@ -131,8 +127,9 @@ class LandingHeroWeb extends StatelessWidget {
                       ],
                     ),
                   ),
+
                   SizedBox(width: context.gap(50)),
-                  // RIGHT
+
                   Expanded(
                     flex: 5,
                     child: Image.asset(
@@ -143,8 +140,8 @@ class LandingHeroWeb extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

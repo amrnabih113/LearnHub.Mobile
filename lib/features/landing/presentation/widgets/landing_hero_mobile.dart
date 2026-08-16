@@ -138,7 +138,7 @@ class LandingHeroMobile extends StatelessWidget {
                 if (AdaptiveContext.of(context).isCompact) ...[
                   Text(
                     'Discover practical courses, build real skills, '
-                    'and move closer to your goals — at your own pace.',
+                    'and move closer to your goals — at your own place.',
                     style: context.bodyLarge.copyWith(
                       color: MyColors.textSecondaryDark,
                     ),
