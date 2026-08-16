@@ -37,7 +37,6 @@ extension MySizesExtension on BuildContext {
 
   bool get isDesktop => deviceType == DeviceType.desktop;
 
-
   // ============================================================
   // ICONS
   // ============================================================
@@ -155,6 +154,7 @@ extension MySizesExtension on BuildContext {
   double get radiusMd => ResponsiveHelper.responsiveValue(this, 12);
   double get radiusLg => ResponsiveHelper.responsiveValue(this, 16);
   double get radiusXl => ResponsiveHelper.responsiveValue(this, 20);
+  double get radiusCircle => ResponsiveHelper.responsiveValue(this, 500);
 
   // ============================================================
   // CARD
@@ -402,89 +402,89 @@ extension MySizesExtension on BuildContext {
     return longestSide * (value / 100);
   }
   // ============================================================
-// TEXT
-// ============================================================
+  // TEXT
+  // ============================================================
 
-/// Display
-double get displayXl => responsive(48);
+  /// Display
+  double get displayXl => responsive(48);
 
-double get displayLg => responsive(40);
+  double get displayLg => responsive(40);
 
-double get displayMd => responsive(36);
+  double get displayMd => responsive(36);
 
-double get displaySm => responsive(32);
+  double get displaySm => responsive(32);
 
-/// Headlines
-double get headlineXl => responsive(30);
+  /// Headlines
+  double get headlineXl => responsive(30);
 
-double get headlineLg => responsive(28);
+  double get headlineLg => responsive(28);
 
-double get headlineMd => responsive(24);
+  double get headlineMd => responsive(24);
 
-double get headlineSm => responsive(22);
+  double get headlineSm => responsive(22);
 
-double get headlineXs => responsive(20);
+  double get headlineXs => responsive(20);
 
-/// Titles
-double get titleXl => responsive(22);
+  /// Titles
+  double get titleXl => responsive(22);
 
-double get titleLg => responsive(20);
+  double get titleLg => responsive(20);
 
-double get titleMd => responsive(18);
+  double get titleMd => responsive(18);
 
-double get titleSm => responsive(16);
+  double get titleSm => responsive(16);
 
-double get titleXs => responsive(14);
+  double get titleXs => responsive(14);
 
-/// Body
-double get bodyXl => responsive(18);
+  /// Body
+  double get bodyXl => responsive(18);
 
-double get bodyLg => responsive(16);
+  double get bodyLg => responsive(16);
 
-double get bodyMd => responsive(14);
+  double get bodyMd => responsive(14);
 
-double get bodySm => responsive(13);
+  double get bodySm => responsive(13);
 
-double get bodyXs => responsive(12);
+  double get bodyXs => responsive(12);
 
-/// Labels
-double get labelLg => responsive(14);
+  /// Labels
+  double get labelLg => responsive(14);
 
-double get labelMd => responsive(12);
+  double get labelMd => responsive(12);
 
-double get labelSm => responsive(11);
+  double get labelSm => responsive(11);
 
-double get labelXs => responsive(10);
+  double get labelXs => responsive(10);
 
-/// Captions / supporting text
-double get captionLg => responsive(13);
+  /// Captions / supporting text
+  double get captionLg => responsive(13);
 
-double get captionMd => responsive(12);
+  double get captionMd => responsive(12);
 
-double get captionSm => responsive(11);
+  double get captionSm => responsive(11);
 
-double get captionXs => responsive(10);
+  double get captionXs => responsive(10);
 
-/// Buttons
-double get buttonTextLg => responsive(16);
+  /// Buttons
+  double get buttonTextLg => responsive(16);
 
-double get buttonTextMd => responsive(14);
+  double get buttonTextMd => responsive(14);
 
-double get buttonTextSm => responsive(13);
+  double get buttonTextSm => responsive(13);
 
-double get buttonTextXs => responsive(12);
+  double get buttonTextXs => responsive(12);
 
-/// Navigation
-double get navigationTextLg => responsive(16);
+  /// Navigation
+  double get navigationTextLg => responsive(16);
 
-double get navigationTextMd => responsive(14);
+  double get navigationTextMd => responsive(14);
 
-double get navigationTextSm => responsive(12);
+  double get navigationTextSm => responsive(12);
 
-/// Overline / tiny UI text
-double get overline => responsive(10);
+  /// Overline / tiny UI text
+  double get overline => responsive(10);
 
-double get helperText => responsive(12);
+  double get helperText => responsive(12);
 
-double get errorText => responsive(12);
+  double get errorText => responsive(12);
 }

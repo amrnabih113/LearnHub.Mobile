@@ -17,20 +17,20 @@ class MyButtons {
     required Widget child,
     BuildContext? context,
   }) {
-    final isDark = context != null ? MyColors.isDark(context) : false;
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: MyColors.accentButton,
-        foregroundColor: isDark
-            ? MyColors.textPrimaryLight
-            : MyColors.textPrimaryLight,
+        foregroundColor: MyColors.textPrimaryLight,
         disabledBackgroundColor: MyColors.accentButton.withValues(alpha: 0.6),
         disabledForegroundColor: MyColors.textPrimaryLight.withValues(
           alpha: 0.6,
         ),
         textStyle: context != null
-            ? context.bodyMedium.copyWith(fontWeight: FontWeight.w600)
+            ? context.bodyMedium.copyWith(
+                fontWeight: FontWeight.w600,
+                color: MyColors.textPrimaryLight,
+              )
             : TextStyle(fontWeight: FontWeight.w600),
       ),
       child: child,

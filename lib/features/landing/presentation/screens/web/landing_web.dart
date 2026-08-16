@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:learnhub/features/landing/presentation/widgets/cta_section.dart';
+import 'package:learnhub/features/landing/presentation/widgets/featured_courses_section.dart';
+import 'package:learnhub/features/landing/presentation/widgets/how_it_works_section.dart';
+import 'package:learnhub/features/landing/presentation/widgets/landing_footer.dart';
 import 'package:learnhub/features/landing/presentation/widgets/landing_hero_web.dart';
+import 'package:learnhub/features/landing/presentation/widgets/stats_section.dart';
+import 'package:learnhub/features/landing/presentation/widgets/testmoinals_section.dart';
+import 'package:learnhub/features/landing/presentation/widgets/topics_section.dart';
 import 'package:learnhub/features/landing/presentation/widgets/web_landing_nav_bar.dart';
 
 class LandingWeb extends StatelessWidget {
@@ -14,10 +21,15 @@ class LandingWeb extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            // NAV BAR
             const WebLandingNavBar(),
-            // HERO
             const LandingHeroWeb(),
+            const StatsSection(),
+            const TopicsSection(),
+            const FeaturedCoursesSection(),
+            const HowItWorksSection(),
+            const LandingCtaSection(),
+            const LandingTestimonials(),
+            const LandingFooter(),
           ],
         ),
       ),

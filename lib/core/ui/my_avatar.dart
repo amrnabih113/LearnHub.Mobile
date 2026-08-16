@@ -34,8 +34,8 @@ class MyAvatar extends StatelessWidget {
 
   Widget _fallback(bool isDark) {
     return Container(
-      width: size,
-      height: size,
+      width: size * 0.8,
+      height: size * 0.8,
       color: isDark ? MyColors.blueDark : MyColors.blue,
       alignment: Alignment.center,
       child: fallback,

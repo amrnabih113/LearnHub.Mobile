@@ -148,10 +148,10 @@ class MyColors {
   // ============================================================
 
   /// Pro subscription
-  static const Color pro = Color(0xFF8B5CF6);
+  static const Color pro = Color(0xFF5513F0);
   static const Color proDark = Color(0xFFA78BFA);
 
-  static const Color proBackground = Color(0xFFEDE9FE);
+  static const Color proBackground = Color.fromARGB(255, 193, 179, 255);
   static const Color proBackgroundDark = Color(0x268B5CF6);
 
   /// Premium subscription

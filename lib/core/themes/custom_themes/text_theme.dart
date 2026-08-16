@@ -16,19 +16,19 @@ class MyTextTheme {
       // ==========================================================
       // DISPLAY
       // ==========================================================
-      displayLarge: GoogleFonts.inter(
+      displayLarge: GoogleFonts.lato(
         fontSize: context.displayXl,
         fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryLight,
       ),
 
-      displayMedium: GoogleFonts.inter(
+      displayMedium: GoogleFonts.lato(
         fontSize: context.displayLg,
         fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryLight,
       ),
 
-      displaySmall: GoogleFonts.inter(
+      displaySmall: GoogleFonts.lato(
         fontSize: context.displayMd,
         fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryLight,
@@ -37,19 +37,19 @@ class MyTextTheme {
       // ==========================================================
       // HEADLINES
       // ==========================================================
-      headlineLarge: GoogleFonts.inter(
+      headlineLarge: GoogleFonts.lato(
         fontSize: context.headlineXl,
         fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryLight,
       ),
 
-      headlineMedium: GoogleFonts.inter(
+      headlineMedium: GoogleFonts.lato(
         fontSize: context.headlineLg,
         fontWeight: FontWeight.w600,
         color: MyColors.textPrimaryLight,
       ),
 
-      headlineSmall: GoogleFonts.inter(
+      headlineSmall: GoogleFonts.lato(
         fontSize: context.headlineMd,
         fontWeight: FontWeight.w500,
         color: MyColors.textPrimaryLight,
@@ -58,19 +58,19 @@ class MyTextTheme {
       // ==========================================================
       // TITLES
       // ==========================================================
-      titleLarge: GoogleFonts.inter(
+      titleLarge: GoogleFonts.lato(
         fontSize: context.titleLg,
         fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryLight,
       ),
 
-      titleMedium: GoogleFonts.inter(
+      titleMedium: GoogleFonts.lato(
         fontSize: context.titleMd,
         fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryLight,
       ),
 
-      titleSmall: GoogleFonts.inter(
+      titleSmall: GoogleFonts.lato(
         fontSize: context.titleSm,
         fontWeight: FontWeight.w500,
         color: MyColors.textPrimaryLight,
@@ -79,19 +79,19 @@ class MyTextTheme {
       // ==========================================================
       // BODY
       // ==========================================================
-      bodyLarge: GoogleFonts.inter(
+      bodyLarge: GoogleFonts.lato(
         fontSize: context.bodyLg,
         fontWeight: FontWeight.w500,
         color: MyColors.textSecondaryLight,
       ),
 
-      bodyMedium: GoogleFonts.inter(
+      bodyMedium: GoogleFonts.lato(
         fontSize: context.bodyMd,
         fontWeight: FontWeight.normal,
         color: MyColors.textSecondaryLight,
       ),
 
-      bodySmall: GoogleFonts.inter(
+      bodySmall: GoogleFonts.lato(
         fontSize: context.bodySm,
         fontWeight: FontWeight.w500,
         color: MyColors.textSecondaryLight.withValues(alpha: 0.6),
@@ -100,19 +100,19 @@ class MyTextTheme {
       // ==========================================================
       // LABELS
       // ==========================================================
-      labelLarge: GoogleFonts.inter(
+      labelLarge: GoogleFonts.lato(
         fontSize: context.labelLg,
         fontWeight: FontWeight.w500,
         color: MyColors.textPrimaryLight,
       ),
 
-      labelMedium: GoogleFonts.inter(
+      labelMedium: GoogleFonts.lato(
         fontSize: context.labelMd,
         fontWeight: FontWeight.w500,
         color: MyColors.textPrimaryLight,
       ),
 
-      labelSmall: GoogleFonts.inter(
+      labelSmall: GoogleFonts.lato(
         fontSize: context.labelSm,
         fontWeight: FontWeight.w500,
         color: MyColors.textPrimaryLight.withValues(alpha: 0.6),
@@ -129,19 +129,19 @@ class MyTextTheme {
       // ==========================================================
       // DISPLAY
       // ==========================================================
-      displayLarge: GoogleFonts.inter(
+      displayLarge: GoogleFonts.lato(
         fontSize: context.displayXl,
         fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryDark,
       ),
 
-      displayMedium: GoogleFonts.inter(
+      displayMedium: GoogleFonts.lato(
         fontSize: context.displayLg,
         fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryDark,
       ),
 
-      displaySmall: GoogleFonts.inter(
+      displaySmall: GoogleFonts.lato(
         fontSize: context.displayMd,
         fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryDark,
@@ -150,19 +150,19 @@ class MyTextTheme {
       // ==========================================================
       // HEADLINES
       // ==========================================================
-      headlineLarge: GoogleFonts.inter(
+      headlineLarge: GoogleFonts.lato(
         fontSize: context.headlineXl,
         fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryDark,
       ),
 
-      headlineMedium: GoogleFonts.inter(
+      headlineMedium: GoogleFonts.lato(
         fontSize: context.headlineLg,
         fontWeight: FontWeight.w600,
         color: MyColors.textPrimaryDark,
       ),
 
-      headlineSmall: GoogleFonts.inter(
+      headlineSmall: GoogleFonts.lato(
         fontSize: context.headlineMd,
         fontWeight: FontWeight.w500,
         color: MyColors.textPrimaryDark,
@@ -171,19 +171,19 @@ class MyTextTheme {
       // ==========================================================
       // TITLES
       // ==========================================================
-      titleLarge: GoogleFonts.inter(
+      titleLarge: GoogleFonts.lato(
         fontSize: context.titleLg,
         fontWeight: FontWeight.w600,
         color: MyColors.textPrimaryDark,
       ),
 
-      titleMedium: GoogleFonts.inter(
+      titleMedium: GoogleFonts.lato(
         fontSize: context.titleMd,
         fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryDark,
       ),
 
-      titleSmall: GoogleFonts.inter(
+      titleSmall: GoogleFonts.lato(
         fontSize: context.titleSm,
         fontWeight: FontWeight.bold,
         color: MyColors.textPrimaryDark,
@@ -192,19 +192,19 @@ class MyTextTheme {
       // ==========================================================
       // BODY
       // ==========================================================
-      bodyLarge: GoogleFonts.inter(
+      bodyLarge: GoogleFonts.lato(
         fontSize: context.bodyLg,
         fontWeight: FontWeight.w500,
         color: MyColors.textSecondaryDark,
       ),
 
-      bodyMedium: GoogleFonts.inter(
+      bodyMedium: GoogleFonts.lato(
         fontSize: context.bodyMd,
         fontWeight: FontWeight.normal,
         color: MyColors.textSecondaryDark,
       ),
 
-      bodySmall: GoogleFonts.inter(
+      bodySmall: GoogleFonts.lato(
         fontSize: context.bodySm,
         fontWeight: FontWeight.w500,
         color: MyColors.textSecondaryDark.withValues(alpha: 0.6),
@@ -213,19 +213,19 @@ class MyTextTheme {
       // ==========================================================
       // LABELS
       // ==========================================================
-      labelLarge: GoogleFonts.inter(
+      labelLarge: GoogleFonts.lato(
         fontSize: context.labelLg,
         fontWeight: FontWeight.w500,
         color: MyColors.textPrimaryDark,
       ),
 
-      labelMedium: GoogleFonts.inter(
+      labelMedium: GoogleFonts.lato(
         fontSize: context.labelMd,
         fontWeight: FontWeight.w500,
         color: MyColors.textPrimaryDark,
       ),
 
-      labelSmall: GoogleFonts.inter(
+      labelSmall: GoogleFonts.lato(
         fontSize: context.labelSm,
         fontWeight: FontWeight.w500,
         color: MyColors.textPrimaryDark.withValues(alpha: 0.6),

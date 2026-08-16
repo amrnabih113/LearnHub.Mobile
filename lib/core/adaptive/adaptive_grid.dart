@@ -43,8 +43,9 @@ class AdaptiveGrid extends StatelessWidget {
     this.physics,
     this.shrinkWrap = false,
     this.childAspectRatio,
+    this.itemHeight,
   });
-
+  final double? itemHeight;
   final double? childAspectRatio;
 
   /// Items displayed by the grid.
@@ -120,8 +121,10 @@ class AdaptiveGrid extends StatelessWidget {
           padding: padding,
           physics: physics,
           shrinkWrap: shrinkWrap,
+
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: columns,
+            mainAxisExtent: itemHeight ?? itemWidth * 1.25,
             crossAxisSpacing: spacing,
             mainAxisSpacing: runSpacing,
             childAspectRatio: itemWidth / (itemWidth * 0.75),
