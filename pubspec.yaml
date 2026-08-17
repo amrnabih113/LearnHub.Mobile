@@ -58,6 +58,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_intl:
+  enabled: true
+ 
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
@@ -118,5 +122,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
-flutter_intl:
-  enabled: true

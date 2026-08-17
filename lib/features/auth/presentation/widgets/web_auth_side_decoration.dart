@@ -8,7 +8,18 @@ import '../../../../core/extensions/text_theme_extension.dart';
 import '../../../../core/utils/my_colors.dart';
 
 class WebAuthSideDecoration extends StatelessWidget {
-  const WebAuthSideDecoration({super.key});
+  const WebAuthSideDecoration({
+    super.key,
+    this.titleLines = const ['Learn.', 'Build.', 'Grow.'],
+    this.highlightedLine = 2,
+    this.subtitle =
+        'Join 25,000+ learners building real skills and turning knowledge into progress.',
+  });
+
+  final List<String> titleLines;
+  final int highlightedLine;
+
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -91,11 +102,10 @@ class WebAuthSideDecoration extends StatelessWidget {
           Positioned(
             top: context.gap(30),
             left: context.gap(30),
-            child: AppLogo(),
+            child: const AppLogo(),
           ),
 
           // HERO CONTENT
-          // Centered vertically in the side panel
           Positioned.fill(
             child: Padding(
               padding: EdgeInsets.symmetric(
@@ -109,31 +119,9 @@ class WebAuthSideDecoration extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Learn.',
-                        style: context.displayLarge.copyWith(
-                          color: MyColors.textPrimaryDark,
-                          fontWeight: FontWeight.w800,
-                          height: 0.95,
-                        ),
-                      ),
-
-                      Text(
-                        'Build.',
-                        style: context.displayLarge.copyWith(
-                          color: MyColors.textPrimaryDark,
-                          fontWeight: FontWeight.w800,
-                          height: 0.95,
-                        ),
-                      ),
-
-                      Text(
-                        'Grow.',
-                        style: context.displayLarge.copyWith(
-                          color: MyColors.yellow,
-                          fontWeight: FontWeight.w800,
-                          height: 0.95,
-                        ),
+                      _HeroTitle(
+                        lines: titleLines,
+                        highlightedLine: highlightedLine,
                       ),
 
                       SizedBox(height: context.gap(24)),
@@ -141,7 +129,7 @@ class WebAuthSideDecoration extends StatelessWidget {
                       ConstrainedBox(
                         constraints: const BoxConstraints(maxWidth: 360),
                         child: Text(
-                          'Join 25,000+ learners building real skills and turning knowledge into progress.',
+                          subtitle,
                           style: context.titleMedium.copyWith(
                             color: MyColors.textSecondaryDark,
                             height: 1.5,
@@ -151,31 +139,8 @@ class WebAuthSideDecoration extends StatelessWidget {
 
                       SizedBox(height: context.gap(32)),
 
-                      // ==================================================
                       // SMALL FEATURE ROW
-                      // ==================================================
-                      Row(
-                        children: [
-                          _FeatureItem(
-                            icon: Icons.school_outlined,
-                            label: 'Learn',
-                          ),
-
-                          SizedBox(width: context.gap(20)),
-
-                          _FeatureItem(
-                            icon: Icons.trending_up_rounded,
-                            label: 'Improve',
-                          ),
-
-                          SizedBox(width: context.gap(20)),
-
-                          _FeatureItem(
-                            icon: Icons.emoji_events_outlined,
-                            label: 'Achieve',
-                          ),
-                        ],
-                      ),
+                      const _FeatureRow(),
                     ],
                   ),
                 ),
@@ -188,7 +153,7 @@ class WebAuthSideDecoration extends StatelessWidget {
             left: context.gap(40),
             right: context.gap(40),
             bottom: context.gap(35),
-            child: _LearningCard(),
+            child: const _LearningCard(),
           ),
         ],
       ),
@@ -196,10 +161,55 @@ class WebAuthSideDecoration extends StatelessWidget {
   }
 }
 
-// ============================================================================
-// FEATURE ITEM
-// ============================================================================
+// HERO TITLE
+class _HeroTitle extends StatelessWidget {
+  const _HeroTitle({required this.lines, required this.highlightedLine});
 
+  final List<String> lines;
+  final int highlightedLine;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: List.generate(lines.length, (index) {
+        final bool isHighlighted = index == highlightedLine;
+        return Text(
+          lines[index],
+          style: context.displayLarge.copyWith(
+            color: isHighlighted ? MyColors.yellow : MyColors.textPrimaryDark,
+            fontWeight: FontWeight.w800,
+            height: 0.95,
+          ),
+        );
+      }),
+    );
+  }
+}
+
+// FEATURE ROW
+class _FeatureRow extends StatelessWidget {
+  const _FeatureRow();
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const _FeatureItem(icon: Icons.school_outlined, label: 'Learn'),
+
+        SizedBox(width: context.gap(20)),
+
+        const _FeatureItem(icon: Icons.trending_up_rounded, label: 'Improve'),
+
+        SizedBox(width: context.gap(20)),
+
+        const _FeatureItem(icon: Icons.emoji_events_outlined, label: 'Achieve'),
+      ],
+    );
+  }
+}
+
+// FEATURE ITEM
 class _FeatureItem extends StatelessWidget {
   const _FeatureItem({required this.icon, required this.label});
 
@@ -225,10 +235,7 @@ class _FeatureItem extends StatelessWidget {
   }
 }
 
-// ============================================================================
 // BOTTOM CARD
-// ============================================================================
-
 class _LearningCard extends StatelessWidget {
   const _LearningCard();
 

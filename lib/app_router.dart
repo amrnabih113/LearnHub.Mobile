@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:learnhub/features/auth/presentation/screens/forget_password_screen.dart';
 import 'package:learnhub/features/auth/presentation/screens/mobile/introduction_screen.dart';
 import 'package:learnhub/features/landing/presentation/screens/landing_screen.dart';
 
@@ -39,6 +40,14 @@ final GoRouter appRouter = GoRouter(
         return const RegisterScreen();
       },
     ),
+
+    GoRoute(
+      path: AppRoutes.forgetPassword,
+      builder: (context, state) {
+        return ForgetPasswordScreen();
+      },
+    ),
+    // Shell
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
         return _PlaceholderShell(child: navigationShell);

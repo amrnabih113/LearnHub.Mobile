@@ -152,7 +152,9 @@ class LoginForm extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.push(AppRoutes.forgetPassword);
+                      },
                       child: Text(
                         'Forgot password?',
                         style: context.bodyMedium.copyWith(
