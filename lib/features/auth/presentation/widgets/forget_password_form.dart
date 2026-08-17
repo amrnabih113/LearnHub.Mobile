@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:learnhub/core/adaptive/adaptive_content.dart';
 import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
 import 'package:learnhub/core/extensions/text_theme_extension.dart';
 import 'package:learnhub/core/ui/my_buttons.dart';
+import 'package:learnhub/core/utils/app_routes.dart';
 import 'package:learnhub/core/utils/my_colors.dart';
 import 'package:learnhub/core/utils/my_images.dart';
 
@@ -52,7 +54,12 @@ class ForgetPasswordForm extends StatelessWidget {
                   width: double.infinity,
                   height: context.buttonHeightLg,
                   child: MyButtons.accent(
-                    onPressed: () {},
+                    onPressed: () {
+                      // TODO Replace with the original logic
+                      context.go(
+                        AppRoutes.passwordOtp + '/amrnabih112@gmail.com',
+                      );
+                    },
                     child: const Text('Send OTP'),
                   ),
                 ),

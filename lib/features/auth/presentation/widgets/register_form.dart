@@ -196,7 +196,11 @@ class RegisterForm extends StatelessWidget {
                   width: double.infinity,
                   height: context.buttonHeight,
                   child: MyButtons.accent(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pushReplacement(
+                        AppRoutes.emailVerification + '/you@example.com',
+                      );
+                    },
                     context: context,
                     child: Text('Create Account'),
                   ),

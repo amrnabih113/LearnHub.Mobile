@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:learnhub/features/auth/presentation/screens/forget_password_screen.dart';
 import 'package:learnhub/features/auth/presentation/screens/mobile/introduction_screen.dart';
+import 'package:learnhub/features/auth/presentation/screens/password_otp_screen.dart';
+import 'package:learnhub/features/auth/presentation/screens/reset_password_screen.dart';
+import 'package:learnhub/features/auth/presentation/screens/verify_email_screen.dart';
 import 'package:learnhub/features/landing/presentation/screens/landing_screen.dart';
 
 import 'core/adaptive/adaptive_app_shell.dart';
@@ -47,6 +50,26 @@ final GoRouter appRouter = GoRouter(
         return ForgetPasswordScreen();
       },
     ),
+
+    GoRoute(
+      path: AppRoutes.passwordOtp + '/:email',
+      builder: (context, state) {
+        return PasswordOtpScreen(email: state.pathParameters['email']!);
+      },
+    ),
+    GoRoute(
+      path: AppRoutes.resetPassword,
+      builder: (context, state) {
+        return ResetPasswordScreen();
+      },
+    ),
+    GoRoute(
+      path: AppRoutes.emailVerification + '/:email',
+      builder: (context, state) {
+        return VerifyEmailScreen(email: state.pathParameters['email']!);
+      },
+    ),
+
     // Shell
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
