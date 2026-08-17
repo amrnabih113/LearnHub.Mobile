@@ -7,6 +7,7 @@ import 'package:learnhub/features/auth/presentation/screens/password_otp_screen.
 import 'package:learnhub/features/auth/presentation/screens/reset_password_screen.dart';
 import 'package:learnhub/features/auth/presentation/screens/verify_email_screen.dart';
 import 'package:learnhub/features/landing/presentation/screens/landing_screen.dart';
+import 'package:learnhub/features/landing/presentation/screens/web_explore_screen.dart';
 
 import 'core/adaptive/adaptive_app_shell.dart';
 import 'core/navigation/navigation.dart';
@@ -67,6 +68,13 @@ final GoRouter appRouter = GoRouter(
       path: AppRoutes.emailVerification + '/:email',
       builder: (context, state) {
         return VerifyEmailScreen(email: state.pathParameters['email']!);
+      },
+    ),
+
+    GoRoute(
+      path: AppRoutes.explore,
+      builder: (context, state) {
+        return ExploreScreen();
       },
     ),
 

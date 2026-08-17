@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:learnhub/core/adaptive/adaptive_context.dart';
 import 'package:learnhub/core/adaptive/adaptive_grid.dart';
 import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
 import 'package:learnhub/core/extensions/text_theme_extension.dart';
+import 'package:learnhub/core/utils/app_routes.dart';
 import 'package:learnhub/core/utils/my_colors.dart';
 import 'package:learnhub/features/common/widgets/course_card.dart';
 import 'package:learnhub/features/landing/presentation/widgets/topic_card.dart';
@@ -64,7 +66,9 @@ class FeaturedCoursesSection extends StatelessWidget {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: SeeAllButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            context.push(AppRoutes.explore);
+                          },
                           title: 'view all',
                         ),
                       ),
@@ -112,8 +116,6 @@ class FeaturedCoursesSection extends StatelessWidget {
                 level: 'Beginner',
                 price: 49,
                 discountPrice: 39,
-                isPurchased: false,
-                isCompleted: false,
               ),
 
               const CourseCard(
@@ -128,8 +130,6 @@ class FeaturedCoursesSection extends StatelessWidget {
                 level: 'Intermediate',
                 price: 59,
                 discountPrice: 39,
-                isPurchased: false,
-                isCompleted: false,
               ),
 
               const CourseCard(
@@ -144,8 +144,6 @@ class FeaturedCoursesSection extends StatelessWidget {
                 level: 'Advanced',
                 price: 79,
                 discountPrice: 59,
-                isPurchased: false,
-                isCompleted: false,
               ),
 
               const CourseCard(
@@ -160,8 +158,6 @@ class FeaturedCoursesSection extends StatelessWidget {
                 level: 'Beginner',
                 price: 49,
                 discountPrice: 35,
-                isPurchased: false,
-                isCompleted: false,
               ),
             ],
           ),

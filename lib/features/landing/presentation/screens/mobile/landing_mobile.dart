@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:learnhub/core/utils/app_routes.dart';
 import 'package:learnhub/features/landing/presentation/widgets/cta_section.dart';
 import 'package:learnhub/features/landing/presentation/widgets/featured_courses_section.dart';
 import 'package:learnhub/features/landing/presentation/widgets/how_it_works_section.dart';
@@ -28,7 +30,9 @@ class LandingMobile extends StatelessWidget {
             const TopicsSection(),
             const FeaturedCoursesSection(),
             const HowItWorksSection(),
-            const LandingCtaSection(),
+            LandingCtaSection(
+              onExploreCourses: () => context.push(AppRoutes.explore),
+            ),
             const LandingTestimonials(),
             const LandingFooter(),
           ],

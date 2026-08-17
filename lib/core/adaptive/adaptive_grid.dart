@@ -101,7 +101,7 @@ class AdaptiveGrid extends StatelessWidget {
     final width = (usableWidth - totalSpacing) / columns;
 
     if (maxItemWidth != null) {
-      return width.clamp(minItemWidth, maxItemWidth!);
+      return width > maxItemWidth! ? maxItemWidth! : width;
     }
 
     return width;
