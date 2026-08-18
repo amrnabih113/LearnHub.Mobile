@@ -44,7 +44,7 @@ class WebLandingNavBar extends StatelessWidget {
 
             TextButton(
               onPressed: () {
-                context.go(AppRoutes.subscribtion);
+                context.go(AppRoutes.subscription);
               },
               child: const Text('Subscribe'),
             ),

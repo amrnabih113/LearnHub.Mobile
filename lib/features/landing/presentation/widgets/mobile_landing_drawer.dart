@@ -62,7 +62,7 @@ class MobileLandingDrawer extends StatelessWidget {
               icon: Icons.workspace_premium_outlined,
               title: 'Subscribe',
               onTap: () {
-                context.go(AppRoutes.subscribtion);
+                context.go(AppRoutes.subscription);
               },
             ),
 

@@ -1,66 +1,26 @@
 import 'package:flutter/material.dart';
+
 import 'adaptive_context.dart';
 import 'window_size.dart';
-import '../navigation/adaptive_navigation_bar.dart';
-import '../navigation/adaptive_navigation_rail.dart';
-import '../navigation/adaptive_sidebar.dart';
-import '../navigation/destinations.dart';
 
+import '../../features/navigation/adaptive_navigation_bar.dart';
+import '../../features/navigation/adaptive_navigation_rail.dart';
+import '../../features/navigation/adaptive_sidebar.dart';
+import '../../features/navigation/destinations.dart';
 
-/// The presentation used by [AdaptiveNavigation].
-enum AdaptiveNavigationType {
-  /// Mobile bottom navigation.
-  bar,
+enum AdaptiveNavigationType { bar, rail, sidebar }
 
-  /// Tablet side navigation.
-  rail,
-
-  /// Desktop expanded sidebar.
-  sidebar,
-}
-
-/// Selects the appropriate LearnHub navigation presentation.
-///
-/// The widget itself does not perform routing. The parent owns the selected
-/// destination and provides [onDestinationSelected].
-///
-/// The navigation presentation is:
-///
-/// ```text
-/// Compact
-///     ↓
-/// NavigationBar
-///
-/// Medium
-///     ↓
-/// NavigationRail
-///
-/// Expanded
-///     ↓
-/// Desktop Sidebar
-/// ```
-///
-/// Example:
-///
-/// ```dart
-/// AdaptiveNavigation(
-///   destinations: LearnHubNavigation.primary,
-///   selectedIndex: selectedIndex,
-///   onDestinationSelected: onDestinationSelected,
-/// )
-/// ```
-///
-/// For tablet layouts, [railExtended] controls whether labels appear beside
-/// the rail icons.
-///
-/// For advanced layouts, [type] can be provided to explicitly select the
-/// navigation presentation.
 class AdaptiveNavigation extends StatelessWidget {
   const AdaptiveNavigation({
     super.key,
     required this.destinations,
     required this.selectedIndex,
     required this.onDestinationSelected,
+    this.desktopPrimary = const [],
+    this.desktopSecondary = const [],
+    this.desktopProfile,
+    this.selectedDestination,
+    this.onDesktopDestinationSelected,
     this.type,
     this.railExtended = false,
     this.sidebarWidth = 260,
@@ -70,46 +30,45 @@ class AdaptiveNavigation extends StatelessWidget {
     this.elevation,
     this.railLeading,
     this.railTrailing,
+    this.sidebarCollapsed = false,
+    this.onSidebarToggle,
+    this.profileAvatar,
   });
-
-  /// Navigation destinations shared by all adaptive presentations.
+  final Widget? profileAvatar;
+  // Mobile destinations.
   final List<LearnHubNavigationDestination> destinations;
 
-  /// Currently selected destination index.
+  // Desktop destinations.
+  final List<LearnHubNavigationDestination> desktopPrimary;
+  final List<LearnHubNavigationDestination> desktopSecondary;
+  final LearnHubNavigationDestination? desktopProfile;
+
   final int selectedIndex;
 
-  /// Called when a destination is selected.
+  final LearnHubNavigationDestination? selectedDestination;
+
   final ValueChanged<int> onDestinationSelected;
 
-  /// Explicitly selects a navigation presentation.
-  ///
-  /// When null, the presentation is determined automatically from the
-  /// current window size.
+  final ValueChanged<LearnHubNavigationDestination>?
+  onDesktopDestinationSelected;
+
   final AdaptiveNavigationType? type;
 
-  /// Whether the tablet rail displays labels beside its icons.
   final bool railExtended;
 
-  /// Width of the desktop sidebar.
   final double sidebarWidth;
 
-  /// Optional desktop sidebar header.
   final Widget? sidebarHeader;
-
-  /// Optional desktop sidebar footer.
   final Widget? sidebarFooter;
 
-  /// Shared background color.
   final Color? backgroundColor;
-
-  /// Shared elevation.
   final double? elevation;
 
-  /// Optional tablet rail leading widget.
   final Widget? railLeading;
-
-  /// Optional tablet rail trailing widget.
   final Widget? railTrailing;
+
+  final bool sidebarCollapsed;
+  final VoidCallback? onSidebarToggle;
 
   AdaptiveNavigationType _resolveType(BuildContext context) {
     if (type != null) {
@@ -117,15 +76,14 @@ class AdaptiveNavigation extends StatelessWidget {
     }
 
     return switch (context.adaptive.windowSize) {
-      // Mobile / narrow web window.
       WindowSize.compact => AdaptiveNavigationType.bar,
-
-      // Tablet / medium window.
       WindowSize.medium => AdaptiveNavigationType.rail,
-
-      // Desktop / expanded web window.
       WindowSize.expanded => AdaptiveNavigationType.sidebar,
     };
+  }
+
+  void _handleDesktopDestination(LearnHubNavigationDestination destination) {
+    onDesktopDestinationSelected?.call(destination);
   }
 
   @override
@@ -133,37 +91,82 @@ class AdaptiveNavigation extends StatelessWidget {
     final resolvedType = _resolveType(context);
 
     switch (resolvedType) {
+      // ----------------------------------------------------------
+      // MOBILE
+      // ----------------------------------------------------------
       case AdaptiveNavigationType.bar:
         return AdaptiveNavigationBar(
           destinations: destinations,
           selectedIndex: selectedIndex,
           onDestinationSelected: onDestinationSelected,
           backgroundColor: backgroundColor,
-          elevation: elevation,
         );
 
+      // ----------------------------------------------------------
+      // TABLET
+      // ----------------------------------------------------------
       case AdaptiveNavigationType.rail:
         return AdaptiveNavigationRail(
           destinations: destinations,
+
           selectedIndex: selectedIndex,
           onDestinationSelected: onDestinationSelected,
-          extended: railExtended,
-          backgroundColor: backgroundColor,
-          elevation: elevation,
-          leading: railLeading,
-          trailing: railTrailing,
-        );
 
+          // ALL desktop destinations in one continuous list.
+          desktopPrimary: desktopPrimary,
+          desktopSecondary: desktopSecondary,
+
+          // Profile stays completely separate at the bottom.
+          profileDestination: desktopProfile,
+          selectedDestination: selectedDestination,
+          profileAvatar: profileAvatar,
+
+          backgroundColor: backgroundColor,
+          width: 72,
+          elevation: elevation,
+        );
+      // ----------------------------------------------------------
+      // DESKTOP
+      // ----------------------------------------------------------
       case AdaptiveNavigationType.sidebar:
         return AdaptiveSidebar(
-          destinations: destinations,
-          selectedIndex: selectedIndex,
-          onDestinationSelected: onDestinationSelected,
+          destinations: desktopPrimary,
+          secondaryDestinations: desktopSecondary,
+          profileDestination: desktopProfile,
+          selectedDestination: selectedDestination,
+          onDestinationSelected: _handleDesktopDestination,
           width: sidebarWidth,
           header: sidebarHeader,
           footer: sidebarFooter,
           backgroundColor: backgroundColor,
+          collapsed: sidebarCollapsed,
+          onToggle: onSidebarToggle,
         );
     }
   }
+
+  // int _resolveRailSelectedIndex(
+  //   List<LearnHubNavigationDestination> railDestinations,
+  // ) {
+  //   if (selectedDestination != null) {
+  //     final index = railDestinations.indexOf(selectedDestination!);
+
+  //     if (index >= 0) {
+  //       return index;
+  //     }
+  //   }
+
+  //   // If the desktop destination isn't available, try to map the
+  //   // normal selected index to the same destination.
+  //   if (selectedIndex >= 0 && selectedIndex < destinations.length) {
+  //     final selected = destinations[selectedIndex];
+  //     final index = railDestinations.indexOf(selected);
+
+  //     if (index >= 0) {
+  //       return index;
+  //     }
+  //   }
+
+  //   return 0;
+  // }
 }

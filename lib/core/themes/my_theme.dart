@@ -144,6 +144,8 @@ class MyTheme {
       colorScheme: const ColorScheme.dark(
         //  --primary
         primary: MyColors.blueDark,
+        
+      
 
         //  --primary-foreground
         onPrimary: MyColors.foregroundDark,

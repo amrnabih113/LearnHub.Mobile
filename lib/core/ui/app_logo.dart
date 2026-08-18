@@ -9,8 +9,10 @@ import '../utils/my_colors.dart';
 import '../utils/my_images.dart';
 
 class AppLogo extends StatelessWidget {
-  const AppLogo({super.key, this.logoColor = MyColors.white});
+  const AppLogo({super.key, this.logoColor = MyColors.white, this.size, this.fontSize});
   final Color logoColor;
+  final double? size;
+  final double? fontSize;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -24,8 +26,8 @@ class AppLogo extends StatelessWidget {
         children: [
           SvgPicture.asset(
             MyImages.appLogoDark,
-            width: context.iconLg,
-            height: context.iconLg,
+            width: size ?? context.iconLg,
+            height: size ?? context.iconLg,
             colorFilter: ColorFilter.mode(logoColor, BlendMode.srcIn),
           ),
           SizedBox(width: context.gap(10)),
@@ -35,6 +37,7 @@ class AppLogo extends StatelessWidget {
               style: context.titleMedium.copyWith(
                 color: logoColor,
                 fontWeight: FontWeight.w900,
+                fontSize: fontSize ?? context.titleMedium.fontSize,
               ),
               children: [
                 TextSpan(
@@ -42,6 +45,7 @@ class AppLogo extends StatelessWidget {
                   style: context.titleMedium.copyWith(
                     color: MyColors.yellow,
                     fontWeight: FontWeight.w900,
+                    fontSize: fontSize ?? context.titleMedium.fontSize,
                   ),
                 ),
               ],
