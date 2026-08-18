@@ -10,6 +10,7 @@ class AppRoutes {
   static const String resetPassword = '/reset-password';
   static const String emailVerification = '/email-verification';
   static const String explore = '/explore';
+  static const String subscribtion = '/subscribtion';
 
   
   static const String home = '/home';

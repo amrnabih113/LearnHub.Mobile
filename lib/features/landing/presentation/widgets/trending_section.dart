@@ -19,7 +19,7 @@ class TrendingSection extends StatelessWidget {
 
     final carouselHeight = AdaptiveValue<double>(
       compact: 230,
-      medium: 230,
+      medium: 260,
       expanded: 210,
     ).resolve(context);
 

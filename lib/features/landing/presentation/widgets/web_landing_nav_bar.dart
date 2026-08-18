@@ -42,7 +42,12 @@ class WebLandingNavBar extends StatelessWidget {
 
             SizedBox(width: context.gap(40)),
 
-            TextButton(onPressed: () {}, child: const Text('Subscribe')),
+            TextButton(
+              onPressed: () {
+                context.go(AppRoutes.subscribtion);
+              },
+              child: const Text('Subscribe'),
+            ),
 
             SizedBox(width: context.gap(5)),
 

@@ -7,6 +7,7 @@ import 'package:learnhub/features/auth/presentation/screens/password_otp_screen.
 import 'package:learnhub/features/auth/presentation/screens/reset_password_screen.dart';
 import 'package:learnhub/features/auth/presentation/screens/verify_email_screen.dart';
 import 'package:learnhub/features/landing/presentation/screens/landing_screen.dart';
+import 'package:learnhub/features/landing/presentation/screens/subscribtion_screen.dart';
 import 'package:learnhub/features/landing/presentation/screens/web_explore_screen.dart';
 
 import 'core/adaptive/adaptive_app_shell.dart';
@@ -78,6 +79,12 @@ final GoRouter appRouter = GoRouter(
       },
     ),
 
+    GoRoute(
+      path: AppRoutes.subscribtion,
+      builder: (context, state) {
+        return const SubscriptionScreen();
+      },
+    ),
     // Shell
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
