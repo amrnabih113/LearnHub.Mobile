@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/extensions/text_theme_extension.dart';
+import '../../../../core/extensions/text_theme_extension.dart';
 
 class FilterCheckboxItem extends StatelessWidget {
-  const FilterCheckboxItem({
+  const FilterCheckboxItem({super.key, 
     required this.label,
     required this.selected,
     required this.onTap,

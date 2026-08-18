@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/ui/dismiss_focus.dart';
+import '../../../../core/ui/dismiss_focus.dart';
 import '../../../../core/adaptive/adaptive_layout.dart';
 import 'web/login_web.dart';
 import '../widgets/login_form.dart';

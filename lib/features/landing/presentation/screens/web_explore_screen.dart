@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learnhub/core/adaptive/adaptive_builder.dart';
-import 'package:learnhub/core/adaptive/adaptive_content.dart';
-import 'package:learnhub/core/adaptive/adaptive_layout.dart';
-import 'package:learnhub/core/adaptive/adaptive_value.dart';
-import 'package:learnhub/core/adaptive/window_size.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
-import 'package:learnhub/service_locator.dart';
-import 'package:learnhub/features/common/domain/entities/course.dart';
-import 'package:learnhub/features/landing/domain/entities/explore_filters.dart';
-import 'package:learnhub/features/landing/domain/entities/learning_path.dart';
-import 'package:learnhub/features/landing/presentation/cubit/explore_cubit.dart';
-import 'package:learnhub/features/landing/presentation/screens/mobile/mobile_explore_content.dart';
-import 'package:learnhub/features/landing/presentation/screens/web/web_explore_content.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_hero.dart';
-import 'package:learnhub/features/landing/presentation/widgets/filter_bottom_sheet.dart';
-import 'package:learnhub/features/landing/presentation/widgets/landing_footer.dart';
-import 'package:learnhub/features/landing/presentation/widgets/mobile_landing_nav_bar.dart';
-import 'package:learnhub/features/landing/presentation/widgets/web_landing_nav_bar.dart';
+import '../../../../core/adaptive/adaptive_builder.dart';
+import '../../../../core/adaptive/adaptive_content.dart';
+import '../../../../core/adaptive/adaptive_layout.dart';
+import '../../../../core/adaptive/adaptive_value.dart';
+import '../../../../core/adaptive/window_size.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../../core/utils/my_colors.dart';
+import '../widgets/mobile_landing_drawer.dart';
+import '../../../../service_locator.dart';
+import '../../../common/domain/entities/course.dart';
+import '../../domain/entities/explore_filters.dart';
+import '../../domain/entities/learning_path.dart';
+import '../cubit/explore_cubit.dart';
+import 'mobile/mobile_explore_content.dart';
+import 'web/web_explore_content.dart';
+import '../widgets/explore_hero.dart';
+import '../widgets/filter_bottom_sheet.dart';
+import '../widgets/landing_footer.dart';
+import '../widgets/mobile_landing_nav_bar.dart';
+import '../widgets/web_landing_nav_bar.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});
@@ -70,7 +71,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
           filters: cubit.state.filters,
           categories: cubit.state.categoryNames,
           onApply: (filters) {
-            cubit.updateFilters(filters); 
+            cubit.updateFilters(filters);
             Navigator.of(sheetContext).pop();
           },
         );
@@ -98,6 +99,7 @@ class _ExploreView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.background(context),
+      endDrawer: MobileLandingDrawer(),
       body: SafeArea(
         bottom: false,
         child: AdaptiveBuilder(
@@ -110,9 +112,7 @@ class _ExploreView extends StatelessWidget {
                   expanded: const WebLandingNavBar(),
                 ),
 
-                
                 // CONTENT
-                
                 Expanded(
                   child: CustomScrollView(
                     physics: const BouncingScrollPhysics(),
@@ -207,9 +207,7 @@ class _ExploreView extends StatelessWidget {
   }
 }
 
-
 // EXPLORE CONTENT
-
 
 class ExploreContent extends StatelessWidget {
   const ExploreContent({

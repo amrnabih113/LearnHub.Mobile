@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/features/auth/presentation/widgets/reset_password_form.dart';
-import 'package:learnhub/features/auth/presentation/widgets/web_auth_side_decoration.dart';
+import '../../widgets/reset_password_form.dart';
+import '../../widgets/web_auth_side_decoration.dart';
 
 class ResetPasswordWeb extends StatelessWidget {
   const ResetPasswordWeb({super.key});

@@ -1,6 +1,6 @@
-import 'package:learnhub/features/common/data/models/course_model.dart';
-import 'package:learnhub/features/landing/data/models/category_model.dart';
-import 'package:learnhub/features/landing/data/models/learning_path_model.dart';
+import '../../../../common/data/models/course_model.dart';
+import '../../models/category_model.dart';
+import '../../models/learning_path_model.dart';
 
 /// Abstract contract for landing & explore remote operations.
 abstract class LandingRemoteDataSource {

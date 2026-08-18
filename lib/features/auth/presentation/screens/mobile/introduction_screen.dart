@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:learnhub/core/adaptive/adaptive_builder.dart';
-import 'package:learnhub/core/adaptive/adaptive_content.dart';
-import 'package:learnhub/core/adaptive/window_size.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/core/extensions/text_theme_extension.dart';
-import 'package:learnhub/core/ui/my_buttons.dart';
-import 'package:learnhub/core/utils/app_routes.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
-import 'package:learnhub/core/utils/my_images.dart';
-import 'package:learnhub/features/auth/presentation/widgets/decorative_circle.dart';
-import 'package:learnhub/features/auth/presentation/widgets/dot_grid.dart';
-import 'package:learnhub/features/auth/presentation/widgets/flow_lines_painter.dart';
+import '../../../../../core/adaptive/adaptive_builder.dart';
+import '../../../../../core/adaptive/adaptive_content.dart';
+import '../../../../../core/adaptive/window_size.dart';
+import '../../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../../../core/extensions/text_theme_extension.dart';
+import '../../../../../core/ui/my_buttons.dart';
+import '../../../../../core/utils/app_routes.dart';
+import '../../../../../core/utils/my_colors.dart';
+import '../../../../../core/utils/my_images.dart';
+import '../../widgets/decorative_circle.dart';
+import '../../widgets/dot_grid.dart';
+import '../../widgets/flow_lines_painter.dart';
 
 class IntroductionScreen extends StatelessWidget {
   const IntroductionScreen({super.key});

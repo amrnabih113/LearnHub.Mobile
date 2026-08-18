@@ -50,7 +50,7 @@ class ExploreHero extends StatelessWidget {
             child: Image.network(
               _heroImage,
               fit: BoxFit.cover,
-              errorBuilder: (_, __, ___) {
+              errorBuilder: (_, _, _) {
                 return Container(color: MyColors.surfaceAlt(context));
               },
             ),

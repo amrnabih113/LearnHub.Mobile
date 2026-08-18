@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
+import '../../../../core/utils/my_colors.dart';
 
 class FlowLinesPainter extends CustomPainter {
   @override

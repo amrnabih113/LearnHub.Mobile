@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/adaptive/adaptive_layout.dart';
-import 'package:learnhub/features/auth/presentation/screens/web/password_otp_web.dart';
-import 'package:learnhub/features/auth/presentation/widgets/otp_verification_form.dart';
+import '../../../../core/adaptive/adaptive_layout.dart';
+import 'web/password_otp_web.dart';
+import '../widgets/otp_verification_form.dart';
 
 class PasswordOtpScreen extends StatelessWidget {
   const PasswordOtpScreen({super.key, this.email});

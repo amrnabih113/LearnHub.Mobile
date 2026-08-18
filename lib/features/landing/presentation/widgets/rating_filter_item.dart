@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/core/extensions/text_theme_extension.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../../core/extensions/text_theme_extension.dart';
+import '../../../../core/utils/my_colors.dart';
 
 class RatingFilterItem extends StatelessWidget {
-  const RatingFilterItem({
+  const RatingFilterItem({super.key, 
     required this.rating,
     required this.selected,
     required this.onTap,

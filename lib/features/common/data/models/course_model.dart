@@ -1,4 +1,4 @@
-import 'package:learnhub/features/common/domain/entities/course.dart';
+import '../../domain/entities/course.dart';
 
 /// Unified Course Model with JSON serialization & mapping to/from domain [Course].
 class CourseModel {

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/adaptive/adaptive_value.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/features/common/domain/entities/course.dart';
-import 'package:learnhub/features/landing/domain/entities/explore_filters.dart';
-import 'package:learnhub/features/landing/domain/entities/learning_path.dart';
-import 'package:learnhub/features/landing/presentation/widgets/category_section.dart';
-import 'package:learnhub/features/landing/presentation/widgets/course_grid.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_cta.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_toolbar.dart';
-import 'package:learnhub/features/landing/presentation/widgets/learning_formats_section.dart';
-import 'package:learnhub/features/landing/presentation/widgets/learning_paths_section.dart';
-import 'package:learnhub/features/landing/presentation/widgets/section_heading.dart';
-import 'package:learnhub/features/landing/presentation/widgets/trending_section.dart';
+import '../../../../../core/adaptive/adaptive_value.dart';
+import '../../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../../common/domain/entities/course.dart';
+import '../../../domain/entities/explore_filters.dart';
+import '../../../domain/entities/learning_path.dart';
+import '../../widgets/category_section.dart';
+import '../../widgets/course_grid.dart';
+import '../../widgets/explore_cta.dart';
+import '../../widgets/explore_toolbar.dart';
+import '../../widgets/learning_formats_section.dart';
+import '../../widgets/learning_paths_section.dart';
+import '../../widgets/section_heading.dart';
+import '../../widgets/trending_section.dart';
 
 class MobileExploreContent extends StatelessWidget {
   const MobileExploreContent({

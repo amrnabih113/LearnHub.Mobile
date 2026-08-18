@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:learnhub/core/adaptive/adaptive_content.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/core/extensions/text_theme_extension.dart';
-import 'package:learnhub/core/ui/my_buttons.dart';
-import 'package:learnhub/core/utils/app_routes.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
-import 'package:learnhub/core/utils/my_images.dart';
+import '../../../../core/adaptive/adaptive_content.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../../core/extensions/text_theme_extension.dart';
+import '../../../../core/ui/my_buttons.dart';
+import '../../../../core/utils/app_routes.dart';
+import '../../../../core/utils/my_colors.dart';
+import '../../../../core/utils/my_images.dart';
 
 class ForgetPasswordForm extends StatelessWidget {
   const ForgetPasswordForm({super.key});
@@ -28,7 +28,7 @@ class ForgetPasswordForm extends StatelessWidget {
               children: [
                 SizedBox(
                   height: context.screenHeight * 0.3,
-                  child: Image.asset(MyImages.EmailSent, fit: BoxFit.contain),
+                  child: Image.asset(MyImages.emailSent, fit: BoxFit.contain),
                 ),
                 SizedBox(height: context.spaceXl),
                 Text('Forgot Password ?', style: context.headlineMedium),
@@ -57,7 +57,7 @@ class ForgetPasswordForm extends StatelessWidget {
                     onPressed: () {
                       // TODO Replace with the original logic
                       context.go(
-                        AppRoutes.passwordOtp + '/amrnabih112@gmail.com',
+                        '${AppRoutes.passwordOtp}/amrnabih112@gmail.com',
                       );
                     },
                     child: const Text('Send OTP'),

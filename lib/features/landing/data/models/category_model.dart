@@ -1,4 +1,4 @@
-import 'package:learnhub/features/landing/domain/entities/category.dart';
+import '../../domain/entities/category.dart';
 
 /// Category Data Model with JSON mapping to/from [Category] entity.
 class CategoryModel {

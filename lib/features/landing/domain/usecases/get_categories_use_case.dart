@@ -1,6 +1,6 @@
-import 'package:learnhub/core/error/result.dart';
-import 'package:learnhub/features/landing/domain/entities/category.dart';
-import 'package:learnhub/features/landing/domain/repositories/landing_repository.dart';
+import '../../../../core/error/result.dart';
+import '../entities/category.dart';
+import '../repositories/landing_repository.dart';
 
 class GetCategoriesUseCase {
   final LandingRepository _repository;

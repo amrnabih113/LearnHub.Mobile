@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/features/landing/presentation/widgets/category_tile.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import 'category_tile.dart';
 
 class CategorySection extends StatelessWidget {
-  const CategorySection({
+  const CategorySection({super.key, 
     required this.categories,
     required this.selectedCategory,
     required this.onSelected,

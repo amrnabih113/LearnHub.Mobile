@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/adaptive/adaptive_value.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/features/common/domain/entities/course.dart';
-import 'package:learnhub/features/common/widgets/course_card.dart';
-import 'package:learnhub/features/landing/presentation/widgets/section_heading.dart';
+import '../../../../core/adaptive/adaptive_value.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../common/domain/entities/course.dart';
+import '../../../common/widgets/course_card.dart';
+import 'section_heading.dart';
 
 class TrendingSection extends StatelessWidget {
   const TrendingSection({super.key, required this.courses});

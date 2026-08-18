@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/adaptive/adaptive_value.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/core/extensions/text_theme_extension.dart';
-import 'package:learnhub/core/ui/level_bars.dart';
-import 'package:learnhub/core/ui/my_avatar.dart';
-import 'package:learnhub/core/ui/star_rating.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
+import '../../../core/adaptive/adaptive_value.dart';
+import '../../../core/extensions/my_sizes_extensions.dart';
+import '../../../core/extensions/text_theme_extension.dart';
+import '../../../core/ui/level_bars.dart';
+import '../../../core/ui/my_avatar.dart';
+import '../../../core/ui/star_rating.dart';
+import '../../../core/utils/my_colors.dart';
 
 class CourseCard extends StatelessWidget {
   const CourseCard({
@@ -873,7 +873,7 @@ class _CourseImage extends StatelessWidget {
           Image.network(
             imageUrl,
             fit: BoxFit.cover,
-            errorBuilder: (_, __, ___) {
+            errorBuilder: (_, _, _) {
               return Container(
                 color: MyColors.surfaceAlt(context),
                 alignment: Alignment.center,

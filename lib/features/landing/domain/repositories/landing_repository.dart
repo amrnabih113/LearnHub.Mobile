@@ -1,7 +1,7 @@
-import 'package:learnhub/core/error/result.dart';
-import 'package:learnhub/features/common/domain/entities/course.dart';
-import 'package:learnhub/features/landing/domain/entities/category.dart';
-import 'package:learnhub/features/landing/domain/entities/learning_path.dart';
+import '../../../../core/error/result.dart';
+import '../../../common/domain/entities/course.dart';
+import '../entities/category.dart';
+import '../entities/learning_path.dart';
 
 /// Domain contract for Landing & Explore data operations.
 abstract class LandingRepository {

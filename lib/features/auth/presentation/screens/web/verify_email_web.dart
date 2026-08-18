@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/features/auth/presentation/widgets/email_verification_form.dart';
-import 'package:learnhub/features/auth/presentation/widgets/web_auth_side_decoration.dart';
+import '../../widgets/email_verification_form.dart';
+import '../../widgets/web_auth_side_decoration.dart';
 
 class VerifyEmailWeb extends StatelessWidget {
   const VerifyEmailWeb({super.key, this.email});

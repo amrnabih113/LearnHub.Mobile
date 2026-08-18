@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/features/common/data/models/course_model.dart';
-import 'package:learnhub/features/landing/data/datasources/remote/landing_remote_data_source.dart';
-import 'package:learnhub/features/landing/data/models/category_model.dart';
-import 'package:learnhub/features/landing/data/models/learning_path_model.dart';
-import 'package:learnhub/features/landing/domain/entities/learning_path.dart';
+import '../../../../common/data/models/course_model.dart';
+import 'landing_remote_data_source.dart';
+import '../../models/category_model.dart';
+import '../../models/learning_path_model.dart';
+import '../../../domain/entities/learning_path.dart';
 
 /// Mock remote data source delivering rich mock datasets for testing and development.
 class MockLandingRemoteDataSource implements LandingRemoteDataSource {

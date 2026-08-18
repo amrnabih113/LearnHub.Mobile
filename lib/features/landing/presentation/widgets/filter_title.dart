@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/extensions/text_theme_extension.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
+import '../../../../core/extensions/text_theme_extension.dart';
+import '../../../../core/utils/my_colors.dart';
 
 class FilterTitle extends StatelessWidget {
-  const FilterTitle({required this.title});
+  const FilterTitle({super.key, required this.title});
 
   final String title;
 

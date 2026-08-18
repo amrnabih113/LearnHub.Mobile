@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/adaptive/adaptive_layout.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/core/ui/app_logo.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
-import 'package:learnhub/features/landing/presentation/widgets/my_end_drawer_button.dart';
+import '../../../../core/adaptive/adaptive_layout.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../../core/ui/app_logo.dart';
+import '../../../../core/utils/my_colors.dart';
+import 'my_end_drawer_button.dart';
 
 class MobileLandingNavBar extends StatelessWidget {
   const MobileLandingNavBar({super.key});

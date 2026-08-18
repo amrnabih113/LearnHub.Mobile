@@ -1,4 +1,4 @@
-import 'dart:math' as MathHelper;
+import 'dart:math' as math_helper;
 
 import 'package:flutter/material.dart';
 
@@ -141,11 +141,11 @@ class _StarPainter extends CustomPainter {
   }
 
   double _cos(double angle) {
-    return MathHelper.cos(angle);
+    return math_helper.cos(angle);
   }
 
   double _sin(double angle) {
-    return MathHelper.sin(angle);
+    return math_helper.sin(angle);
   }
 
   @override
@@ -155,4 +155,3 @@ class _StarPainter extends CustomPainter {
         oldDelegate.inactiveColor != inactiveColor;
   }
 }
-

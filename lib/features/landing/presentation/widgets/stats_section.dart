@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/adaptive/adaptive_layout.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
-import 'package:learnhub/features/landing/presentation/widgets/stat.dart';
+import '../../../../core/adaptive/adaptive_layout.dart';
+import '../../../../core/utils/my_colors.dart';
+import 'stat.dart';
 
 class StatsSection extends StatelessWidget {
   const StatsSection({super.key});

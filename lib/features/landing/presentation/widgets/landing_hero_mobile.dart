@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/adaptive/adaptive_context.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/core/extensions/text_theme_extension.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
-import 'package:learnhub/core/utils/my_images.dart';
-import 'package:learnhub/features/auth/presentation/widgets/decorative_circle.dart';
-import 'package:learnhub/features/auth/presentation/widgets/dot_grid.dart';
-import 'package:learnhub/features/auth/presentation/widgets/flow_lines_painter.dart';
-import 'package:learnhub/features/landing/presentation/widgets/benefits.dart';
-import 'package:learnhub/features/landing/presentation/widgets/hero_search.dart';
-import 'package:learnhub/features/landing/presentation/widgets/learner_banner.dart';
+import '../../../../core/adaptive/adaptive_context.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../../core/extensions/text_theme_extension.dart';
+import '../../../../core/utils/my_colors.dart';
+import '../../../../core/utils/my_images.dart';
+import '../../../auth/presentation/widgets/decorative_circle.dart';
+import '../../../auth/presentation/widgets/dot_grid.dart';
+import '../../../auth/presentation/widgets/flow_lines_painter.dart';
+import 'benefits.dart';
+import 'hero_search.dart';
+import 'learner_banner.dart';
 
 class LandingHeroMobile extends StatelessWidget {
   const LandingHeroMobile({super.key});

@@ -1,14 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:learnhub/features/auth/presentation/screens/forget_password_screen.dart';
-import 'package:learnhub/features/auth/presentation/screens/mobile/introduction_screen.dart';
-import 'package:learnhub/features/auth/presentation/screens/password_otp_screen.dart';
-import 'package:learnhub/features/auth/presentation/screens/reset_password_screen.dart';
-import 'package:learnhub/features/auth/presentation/screens/verify_email_screen.dart';
-import 'package:learnhub/features/landing/presentation/screens/landing_screen.dart';
-import 'package:learnhub/features/landing/presentation/screens/subscribtion_screen.dart';
-import 'package:learnhub/features/landing/presentation/screens/web_explore_screen.dart';
+import 'features/auth/presentation/screens/forget_password_screen.dart';
+import 'features/auth/presentation/screens/mobile/introduction_screen.dart';
+import 'features/auth/presentation/screens/password_otp_screen.dart';
+import 'features/auth/presentation/screens/reset_password_screen.dart';
+import 'features/auth/presentation/screens/verify_email_screen.dart';
+import 'features/landing/presentation/screens/landing_screen.dart';
+import 'features/landing/presentation/screens/subscribtion_screen.dart';
+import 'features/landing/presentation/screens/web_explore_screen.dart';
 
 import 'core/adaptive/adaptive_app_shell.dart';
 import 'core/navigation/navigation.dart';
@@ -54,7 +54,7 @@ final GoRouter appRouter = GoRouter(
     ),
 
     GoRoute(
-      path: AppRoutes.passwordOtp + '/:email',
+      path: '${AppRoutes.passwordOtp}/:email',
       builder: (context, state) {
         return PasswordOtpScreen(email: state.pathParameters['email']!);
       },
@@ -66,7 +66,7 @@ final GoRouter appRouter = GoRouter(
       },
     ),
     GoRoute(
-      path: AppRoutes.emailVerification + '/:email',
+      path: '${AppRoutes.emailVerification}/:email',
       builder: (context, state) {
         return VerifyEmailScreen(email: state.pathParameters['email']!);
       },

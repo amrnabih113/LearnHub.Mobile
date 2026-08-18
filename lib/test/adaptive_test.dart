@@ -207,13 +207,13 @@ class _ResponsivePlaygroundScreenState
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AdaptiveVisibility(
+            medium: true,
+            expanded: true,
+            compact: false,
             child: const _VisibilityTile(
               label: 'Visible on compact',
               icon: Icons.phone_android,
             ),
-            medium: true,
-            expanded: true,
-            compact: false,
           ),
           const SizedBox(height: 12),
           const Text(

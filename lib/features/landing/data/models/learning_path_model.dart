@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/features/landing/domain/entities/learning_path.dart';
+import '../../domain/entities/learning_path.dart';
 
 /// Data model for LearningPath serialization and mapping to entity.
 class LearningPathModel {

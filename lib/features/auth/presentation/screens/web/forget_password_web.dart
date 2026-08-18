@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/features/auth/presentation/widgets/forget_password_form.dart';
-import 'package:learnhub/features/auth/presentation/widgets/web_auth_side_decoration.dart';
+import '../../widgets/forget_password_form.dart';
+import '../../widgets/web_auth_side_decoration.dart';
 
 class ForgetPasswordWeb extends StatelessWidget {
   const ForgetPasswordWeb({super.key});

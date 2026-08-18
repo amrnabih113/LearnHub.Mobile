@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/adaptive/adaptive_layout.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
-import 'package:learnhub/features/landing/presentation/widgets/mobile_landing_nav_bar.dart';
-import 'package:learnhub/features/landing/presentation/widgets/subscribtion_section.dart';
-import 'package:learnhub/features/landing/presentation/widgets/web_landing_nav_bar.dart';
-import 'package:learnhub/features/landing/presentation/widgets/landing_footer.dart';
+import '../../../../core/adaptive/adaptive_layout.dart';
+import '../../../../core/utils/my_colors.dart';
+import '../widgets/mobile_landing_nav_bar.dart';
+import '../widgets/subscribtion_section.dart';
+import '../widgets/web_landing_nav_bar.dart';
+import '../widgets/landing_footer.dart';
 
 class SubscriptionScreen extends StatelessWidget {
   const SubscriptionScreen({

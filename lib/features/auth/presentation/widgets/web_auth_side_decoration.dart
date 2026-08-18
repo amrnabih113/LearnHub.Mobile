@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/ui/app_logo.dart';
-import 'package:learnhub/features/auth/presentation/widgets/decorative_circle.dart';
-import 'package:learnhub/features/auth/presentation/widgets/dot_grid.dart';
-import 'package:learnhub/features/auth/presentation/widgets/flow_lines_painter.dart';
+import '../../../../core/ui/app_logo.dart';
+import 'decorative_circle.dart';
+import 'dot_grid.dart';
+import 'flow_lines_painter.dart';
 import '../../../../core/extensions/my_sizes_extensions.dart';
 import '../../../../core/extensions/text_theme_extension.dart';
 import '../../../../core/utils/my_colors.dart';

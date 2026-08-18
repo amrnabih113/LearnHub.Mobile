@@ -1,10 +1,10 @@
-import 'package:learnhub/core/error/failuors.dart';
-import 'package:learnhub/core/error/result.dart';
-import 'package:learnhub/features/common/domain/entities/course.dart';
-import 'package:learnhub/features/landing/data/datasources/remote/landing_remote_data_source.dart';
-import 'package:learnhub/features/landing/domain/entities/category.dart';
-import 'package:learnhub/features/landing/domain/entities/learning_path.dart';
-import 'package:learnhub/features/landing/domain/repositories/landing_repository.dart';
+import '../../../../core/error/failuors.dart';
+import '../../../../core/error/result.dart';
+import '../../../common/domain/entities/course.dart';
+import '../datasources/remote/landing_remote_data_source.dart';
+import '../../domain/entities/category.dart';
+import '../../domain/entities/learning_path.dart';
+import '../../domain/repositories/landing_repository.dart';
 
 class LandingRepositoryImpl implements LandingRepository {
   final LandingRemoteDataSource _remoteDataSource;

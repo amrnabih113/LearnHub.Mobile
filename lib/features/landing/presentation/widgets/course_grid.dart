@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/adaptive/adaptive_grid.dart';
-import 'package:learnhub/core/adaptive/adaptive_value.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/features/common/domain/entities/course.dart';
-import 'package:learnhub/features/common/widgets/course_card.dart';
-import 'package:learnhub/features/landing/presentation/widgets/empty_courses.dart';
+import '../../../../core/adaptive/adaptive_grid.dart';
+import '../../../../core/adaptive/adaptive_value.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../common/domain/entities/course.dart';
+import '../../../common/widgets/course_card.dart';
+import 'empty_courses.dart';
 
 class CourseGrid extends StatelessWidget {
   const CourseGrid({super.key, required this.courses});

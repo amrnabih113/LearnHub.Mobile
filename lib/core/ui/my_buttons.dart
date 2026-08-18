@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/extensions/text_theme_extension.dart';
+import '../extensions/text_theme_extension.dart';
 
 import '../utils/my_colors.dart';
 

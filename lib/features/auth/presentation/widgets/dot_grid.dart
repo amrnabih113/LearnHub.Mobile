@@ -7,7 +7,7 @@ class DotGrid extends StatelessWidget {
   final Color color;
   final double opacity;
 
-  const DotGrid({
+  const DotGrid({super.key, 
     required this.rows,
     required this.columns,
     required this.spacing,

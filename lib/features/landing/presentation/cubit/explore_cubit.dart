@@ -1,12 +1,12 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learnhub/features/common/domain/entities/course.dart';
-import 'package:learnhub/features/landing/domain/entities/category.dart';
-import 'package:learnhub/features/landing/domain/entities/explore_filters.dart';
-import 'package:learnhub/features/landing/domain/entities/learning_path.dart';
-import 'package:learnhub/features/landing/domain/usecases/get_categories_use_case.dart';
-import 'package:learnhub/features/landing/domain/usecases/get_explore_courses_use_case.dart';
-import 'package:learnhub/features/landing/domain/usecases/get_learning_paths_use_case.dart';
+import '../../../common/domain/entities/course.dart';
+import '../../domain/entities/category.dart';
+import '../../domain/entities/explore_filters.dart';
+import '../../domain/entities/learning_path.dart';
+import '../../domain/usecases/get_categories_use_case.dart';
+import '../../domain/usecases/get_explore_courses_use_case.dart';
+import '../../domain/usecases/get_learning_paths_use_case.dart';
 
 part 'explore_state.dart';
 

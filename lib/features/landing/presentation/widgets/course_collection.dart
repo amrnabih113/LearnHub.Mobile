@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/features/common/domain/entities/course.dart';
-import 'package:learnhub/features/landing/presentation/widgets/course_grid.dart';
-import 'package:learnhub/features/landing/presentation/widgets/section_heading.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../common/domain/entities/course.dart';
+import 'course_grid.dart';
+import 'section_heading.dart';
 
 class CourseCollection extends StatelessWidget {
   const CourseCollection({

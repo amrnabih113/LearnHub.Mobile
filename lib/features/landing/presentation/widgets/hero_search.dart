@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/adaptive/adaptive_context.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/core/ui/my_buttons.dart';
+import '../../../../core/adaptive/adaptive_context.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../../core/ui/my_buttons.dart';
 
 class HeroSearch extends StatelessWidget {
   const HeroSearch({super.key});

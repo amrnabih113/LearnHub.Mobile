@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/features/auth/presentation/widgets/otp_verification_form.dart';
-import 'package:learnhub/features/auth/presentation/widgets/web_auth_side_decoration.dart';
+import '../../widgets/otp_verification_form.dart';
+import '../../widgets/web_auth_side_decoration.dart';
 
 class PasswordOtpWeb extends StatelessWidget {
   const PasswordOtpWeb({super.key, this.email});

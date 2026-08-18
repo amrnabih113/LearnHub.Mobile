@@ -5,7 +5,7 @@ class DecorativeCircle extends StatelessWidget {
   final Color color;
   final double opacity;
 
-  const DecorativeCircle({
+  const DecorativeCircle({super.key, 
     required this.size,
     required this.color,
     required this.opacity,

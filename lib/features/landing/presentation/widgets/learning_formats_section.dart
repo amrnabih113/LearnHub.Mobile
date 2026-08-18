@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/adaptive/adaptive_grid.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/features/landing/presentation/widgets/format_card.dart';
-import 'package:learnhub/features/landing/presentation/widgets/section_heading.dart';
+import '../../../../core/adaptive/adaptive_grid.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import 'format_card.dart';
+import 'section_heading.dart';
 
 class LearningFormatsSection extends StatelessWidget {
-  const LearningFormatsSection();
+  const LearningFormatsSection({super.key});
 
   @override
   Widget build(BuildContext context) {

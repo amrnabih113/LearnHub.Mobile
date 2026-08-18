@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/core/ui/app_logo.dart';
-import 'package:learnhub/core/ui/my_buttons.dart';
-import 'package:learnhub/core/utils/app_routes.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../../core/ui/app_logo.dart';
+import '../../../../core/ui/my_buttons.dart';
+import '../../../../core/utils/app_routes.dart';
+import '../../../../core/utils/my_colors.dart';
 
 class WebLandingNavBar extends StatelessWidget {
   const WebLandingNavBar({super.key});

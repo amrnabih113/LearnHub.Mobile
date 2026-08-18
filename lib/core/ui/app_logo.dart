@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:learnhub/core/extensions/go_router_extension.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/core/extensions/text_theme_extension.dart';
-import 'package:learnhub/core/utils/app_routes.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
-import 'package:learnhub/core/utils/my_images.dart';
+import '../extensions/go_router_extension.dart';
+import '../extensions/my_sizes_extensions.dart';
+import '../extensions/text_theme_extension.dart';
+import '../utils/app_routes.dart';
+import '../utils/my_colors.dart';
+import '../utils/my_images.dart';
 
 class AppLogo extends StatelessWidget {
   const AppLogo({super.key, this.logoColor = MyColors.white});

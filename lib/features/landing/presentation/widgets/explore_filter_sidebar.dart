@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/core/extensions/text_theme_extension.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
-import 'package:learnhub/features/landing/domain/entities/explore_filters.dart';
-import 'package:learnhub/features/landing/presentation/widgets/filter_checkbox_item.dart';
-import 'package:learnhub/features/landing/presentation/widgets/filter_radio_item.dart';
-import 'package:learnhub/features/landing/presentation/widgets/filter_title.dart';
-import 'package:learnhub/features/landing/presentation/widgets/rating_filter_item.dart';
+import '../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../../core/extensions/text_theme_extension.dart';
+import '../../../../core/utils/my_colors.dart';
+import '../../domain/entities/explore_filters.dart';
+import 'filter_checkbox_item.dart';
+import 'filter_radio_item.dart';
+import 'filter_title.dart';
+import 'rating_filter_item.dart';
 
 class ExploreFilterSidebar extends StatelessWidget {
   const ExploreFilterSidebar({

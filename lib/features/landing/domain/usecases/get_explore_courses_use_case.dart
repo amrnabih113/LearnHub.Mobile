@@ -1,6 +1,6 @@
-import 'package:learnhub/core/error/result.dart';
-import 'package:learnhub/features/common/domain/entities/course.dart';
-import 'package:learnhub/features/landing/domain/repositories/landing_repository.dart';
+import '../../../../core/error/result.dart';
+import '../../../common/domain/entities/course.dart';
+import '../repositories/landing_repository.dart';
 
 class GetExploreCoursesUseCase {
   final LandingRepository _repository;

@@ -198,7 +198,7 @@ class RegisterForm extends StatelessWidget {
                   child: MyButtons.accent(
                     onPressed: () {
                       context.pushReplacement(
-                        AppRoutes.emailVerification + '/you@example.com',
+                        '${AppRoutes.emailVerification}/you@example.com',
                       );
                     },
                     context: context,
