@@ -1,21 +1,24 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:learnhub/core/adaptive/adaptive_content.dart';
-import 'package:learnhub/core/adaptive/adaptive_value.dart';
-import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
-import 'package:learnhub/core/extensions/text_theme_extension.dart';
-import 'package:learnhub/core/utils/my_colors.dart';
+import '../../../../../core/adaptive/adaptive_content.dart';
+import '../../../../../core/adaptive/adaptive_value.dart';
+import '../../../../../core/extensions/my_sizes_extensions.dart';
+import '../../../../../core/extensions/text_theme_extension.dart';
+import '../../../../../core/utils/my_colors.dart';
 
 class ExploreHero extends StatelessWidget {
   const ExploreHero({
+    super.key,
     required this.categories,
     required this.selectedCategory,
     required this.onCategorySelected,
+    this.onSearchChanged,
   });
 
   final List<String> categories;
   final String? selectedCategory;
   final ValueChanged<String?> onCategorySelected;
+  final ValueChanged<String>? onSearchChanged;
 
   static const String _heroImage =
       'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1800&auto=format&fit=crop';
@@ -113,6 +116,7 @@ class ExploreHero extends StatelessWidget {
                     ConstrainedBox(
                       constraints: const BoxConstraints(maxWidth: 720),
                       child: TextField(
+                        onChanged: onSearchChanged,
                         style: context.bodyLarge.copyWith(
                           color: MyColors.textPrimary(context),
                         ),

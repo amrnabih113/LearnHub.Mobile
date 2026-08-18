@@ -3,9 +3,8 @@ import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
 import 'package:learnhub/core/extensions/text_theme_extension.dart';
 import 'package:learnhub/core/ui/my_buttons.dart';
 import 'package:learnhub/core/utils/my_colors.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_mokeup_data.dart';
+import 'package:learnhub/features/landing/domain/entities/explore_filters.dart';
 import 'package:learnhub/features/landing/presentation/widgets/filter_bottom_sheet.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_filters.dart';
 import 'package:learnhub/features/landing/presentation/widgets/filter_checkbox_item.dart';
 import 'package:learnhub/features/landing/presentation/widgets/filter_radio_item.dart';
 import 'package:learnhub/features/landing/presentation/widgets/filter_title.dart';
@@ -92,6 +91,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
                           setState(() {
                             _filters = _filters.copyWith(
                               category: selected ? null : category,
+                              clearCategory: selected,
                             );
                           });
                         },
@@ -207,3 +207,4 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
     );
   }
 }
+

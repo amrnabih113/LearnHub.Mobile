@@ -2,18 +2,20 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:learnhub/core/adaptive/adaptive_value.dart';
 import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
+import 'package:learnhub/features/common/domain/entities/course.dart';
 import 'package:learnhub/features/common/widgets/course_card.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_mokeup_data.dart';
 import 'package:learnhub/features/landing/presentation/widgets/section_heading.dart';
 
 class TrendingSection extends StatelessWidget {
-  const TrendingSection({required this.courses});
+  const TrendingSection({super.key, required this.courses});
 
-  final List<ExploreCourse> courses;
+  final List<Course> courses;
 
   @override
   Widget build(BuildContext context) {
-    final trending = courses.take(4).toList();
+    final trending = courses.where((c) => c.isTrending).isNotEmpty
+        ? courses.where((c) => c.isTrending).take(4).toList()
+        : courses.take(4).toList();
 
     final carouselHeight = AdaptiveValue<double>(
       compact: 230,
@@ -35,12 +37,9 @@ class TrendingSection extends StatelessWidget {
           title: 'What learners are watching',
           subtitle: 'Popular courses that are getting attention right now.',
         ),
-
         SizedBox(height: context.spaceLg),
-
         SizedBox(
           height: carouselHeight,
-
           child: CarouselSlider.builder(
             itemCount: trending.length,
             itemBuilder: (context, index, realIndex) {
@@ -53,6 +52,7 @@ class TrendingSection extends StatelessWidget {
                   category: course.category,
                   title: course.title,
                   instructor: course.instructor,
+                  instructorImageUrl: course.instructorImageUrl,
                   rating: course.rating,
                   reviews: course.reviews,
                   duration: course.duration,
@@ -65,7 +65,6 @@ class TrendingSection extends StatelessWidget {
             options: CarouselOptions(
               height: carouselHeight,
               viewportFraction: viewportFraction,
-
               enlargeCenterPage: false,
               enableInfiniteScroll: trending.length > 1,
               autoPlay: trending.length > 1,

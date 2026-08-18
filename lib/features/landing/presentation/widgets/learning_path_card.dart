@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
 import 'package:learnhub/core/extensions/text_theme_extension.dart';
 import 'package:learnhub/core/utils/my_colors.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_mokeup_data.dart';
+import 'package:learnhub/features/landing/domain/entities/learning_path.dart';
 
 class LearningPathCard extends StatelessWidget {
-  const LearningPathCard({required this.path});
+  const LearningPathCard({super.key, required this.path});
 
   final LearningPath path;
 

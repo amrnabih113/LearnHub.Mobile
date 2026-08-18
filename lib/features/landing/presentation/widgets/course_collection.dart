@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
+import 'package:learnhub/features/common/domain/entities/course.dart';
 import 'package:learnhub/features/landing/presentation/widgets/course_grid.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_mokeup_data.dart';
 import 'package:learnhub/features/landing/presentation/widgets/section_heading.dart';
 
 class CourseCollection extends StatelessWidget {
   const CourseCollection({
+    super.key,
     required this.title,
     required this.subtitle,
     required this.courses,
@@ -15,7 +16,7 @@ class CourseCollection extends StatelessWidget {
 
   final String title;
   final String subtitle;
-  final List<ExploreCourse> courses;
+  final List<Course> courses;
   final bool filtersVisible;
   final VoidCallback onToggleFilters;
 

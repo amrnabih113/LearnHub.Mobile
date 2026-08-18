@@ -1,19 +1,20 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
+import 'package:learnhub/features/common/domain/entities/course.dart';
+import 'package:learnhub/features/landing/domain/entities/explore_filters.dart';
+import 'package:learnhub/features/landing/domain/entities/learning_path.dart';
 import 'package:learnhub/features/landing/presentation/widgets/category_section.dart';
 import 'package:learnhub/features/landing/presentation/widgets/course_collection.dart';
 import 'package:learnhub/features/landing/presentation/widgets/explore_cta.dart';
 import 'package:learnhub/features/landing/presentation/widgets/explore_filter_sidebar.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_filters.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_mokeup_data.dart';
 import 'package:learnhub/features/landing/presentation/widgets/learning_formats_section.dart';
 import 'package:learnhub/features/landing/presentation/widgets/learning_paths_section.dart';
 import 'package:learnhub/features/landing/presentation/widgets/section_heading.dart';
 import 'package:learnhub/features/landing/presentation/widgets/trending_section.dart';
 
-class ExpandedExploreContent extends StatelessWidget {
-  const ExpandedExploreContent({
+class WebExploreContent extends StatelessWidget {
+  const WebExploreContent({
+    super.key,
     required this.categories,
     required this.courses,
     required this.paths,
@@ -25,7 +26,7 @@ class ExpandedExploreContent extends StatelessWidget {
   });
 
   final List<String> categories;
-  final List<ExploreCourse> courses;
+  final List<Course> courses;
   final List<LearningPath> paths;
   final ExploreFilters filters;
   final bool filtersVisible;
@@ -39,7 +40,7 @@ class ExpandedExploreContent extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SectionHeading(
+        const SectionHeading(
           eyebrow: 'DISCOVER',
           title: 'Find your next skill',
           subtitle:

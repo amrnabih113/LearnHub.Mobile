@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:learnhub/core/adaptive/adaptive_grid.dart';
 import 'package:learnhub/core/adaptive/adaptive_value.dart';
 import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
+import 'package:learnhub/features/common/domain/entities/course.dart';
 import 'package:learnhub/features/common/widgets/course_card.dart';
 import 'package:learnhub/features/landing/presentation/widgets/empty_courses.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_mokeup_data.dart';
 
 class CourseGrid extends StatelessWidget {
-  const CourseGrid({required this.courses});
+  const CourseGrid({super.key, required this.courses});
 
-  final List<ExploreCourse> courses;
+  final List<Course> courses;
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +38,7 @@ class CourseGrid extends StatelessWidget {
                 category: course.category,
                 title: course.title,
                 instructor: course.instructor,
+                instructorImageUrl: course.instructorImageUrl,
                 rating: course.rating,
                 reviews: course.reviews,
                 duration: course.duration,

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:learnhub/core/adaptive/adaptive_value.dart';
 import 'package:learnhub/core/extensions/my_sizes_extensions.dart';
+import 'package:learnhub/features/common/domain/entities/course.dart';
+import 'package:learnhub/features/landing/domain/entities/explore_filters.dart';
+import 'package:learnhub/features/landing/domain/entities/learning_path.dart';
 import 'package:learnhub/features/landing/presentation/widgets/category_section.dart';
 import 'package:learnhub/features/landing/presentation/widgets/course_grid.dart';
 import 'package:learnhub/features/landing/presentation/widgets/explore_cta.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_filters.dart';
-import 'package:learnhub/features/landing/presentation/widgets/explore_mokeup_data.dart';
 import 'package:learnhub/features/landing/presentation/widgets/explore_toolbar.dart';
 import 'package:learnhub/features/landing/presentation/widgets/learning_formats_section.dart';
 import 'package:learnhub/features/landing/presentation/widgets/learning_paths_section.dart';
@@ -14,18 +15,21 @@ import 'package:learnhub/features/landing/presentation/widgets/trending_section.
 
 class MobileExploreContent extends StatelessWidget {
   const MobileExploreContent({
+    super.key,
     required this.categories,
     required this.courses,
     required this.paths,
     required this.filters,
     required this.onOpenFilters,
+    this.onCategorySelected,
   });
 
   final List<String> categories;
-  final List<ExploreCourse> courses;
+  final List<Course> courses;
   final List<LearningPath> paths;
   final ExploreFilters filters;
   final VoidCallback onOpenFilters;
+  final ValueChanged<String?>? onCategorySelected;
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +37,11 @@ class MobileExploreContent extends StatelessWidget {
       compact: context.spaceXl,
       medium: context.spaceXxl,
     ).resolve(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SectionHeading(
+        const SectionHeading(
           eyebrow: 'DISCOVER',
           title: 'Find your next skill',
           subtitle:
@@ -46,7 +51,7 @@ class MobileExploreContent extends StatelessWidget {
         CategorySection(
           categories: categories,
           selectedCategory: filters.category,
-          onSelected: (_) {},
+          onSelected: onCategorySelected ?? (_) {},
         ),
         SizedBox(height: spacing),
         LearningPathsSection(paths: paths),
